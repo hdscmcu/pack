@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+    <vendor>HDSC</vendor>
+    <name>HC32L15</name>
+    <description>HC32L15 ARM Cortex-M0+ Device Family Pack</description>
+    <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
+    <supportContact>support@hdsc.com</supportContact>
+    <!-- optional license file -->
+    <!-- 
+  <license>
+  </license>
+  -->
+    <releases>
+        <release version="1.0.0" date="2017-07-02">
+            Initial Version
+        </release>
+    </releases>
+
+    <keywords>
+        <!-- keywords for indexing -->
+        <keyword>HDSC</keyword>
+        <keyword>HC32L15</keyword>
+    </keywords>
+
+    <devices>
+        <family Dfamily="HC32L15-Series" Dvendor="HDSC:145">
+            <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="4000000" />
+            <debugconfig type="swd" clock="1000000" />
+            <description>
+                The HC32L15 device family contains an ARM Cortex-M0+ processor, running up to 32 MHz with a versatile set of on-chip peripherals.
+            </description>
+
+            <compile    header="Device/Include/hc32l15.h"/>
+            <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
+            <!-- ************************  Sub-family 'hc32l15'  **************************** -->
+            <subFamily DsubFamily="HC32L15">
+                <processor  Dclock="16000000"/>
+                <!-- *************************  Device 'HC32L15'  ***************************** -->
+                <device Dname="HC32L150KA">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L150KX.SFR"/>
+                    <compile  define="__HC32L150KX__"/>
+                </device>
+                <device Dname="HC32L150K8">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L150KX.SFR"/>
+                    <compile  define="__HC32L150KX__"/>
+                    
+                </device>
+                <device Dname="HC32L150JA">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L150JX.SFR"/>
+                    <compile  define="__HC32L150JX__"/>
+                </device>
+                <device Dname="HC32L150J8">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L150JX.SFR"/>
+                    <compile  define="__HC32L150JX__"/>
+                </device>
+                <device Dname="HC32L150FA">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L150FX.SFR"/>
+                    <compile  define="__HC32L150FX__"/>
+                </device>
+                <device Dname="HC32L150F8">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L150FX.SFR"/>
+                    <compile  define="__HC32L150FX__"/>
+                </device>
+                
+                <device Dname="HC32L156KA">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L156KX.SFR"/>
+                    <compile  define="__HC32L156KX__"/>
+                </device>
+                <device Dname="HC32L156K8">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L156KX.SFR"/>
+                    <compile  define="__HC32L156KX__"/>
+                </device>
+                <device Dname="HC32L156JA">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L156JX.SFR"/>
+                    <compile  define="__HC32L156JX__"/>
+                </device>
+                <device Dname="HC32L156J8">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L156JX.SFR"/>
+                    <compile  define="__HC32L156JX__"/>
+                </device>
+                
+                <device Dname="HC32L157KA">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L157KX.SFR"/>
+                    <compile  define="__HC32L157KX__"/>
+                </device>
+                <device Dname="HC32L157K8">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L157KX.SFR"/>
+                    <compile  define="__HC32L1567X__"/>
+                </device>
+            </subFamily>
+        </family>
+    </devices>
+ 
+    <!-- examples section (optional for all Software Packs)-->
+    <!--
+  <examples>
+  </examples>
+  -->
+    <conditions> 
+        <condition id="Compiler ARMCC">
+            <require Tcompiler="ARMCC"/>
+        </condition>
+
+        <condition id="HC32L15">
+            <description>HDSC HC32L15 Device</description>
+            <require Dvendor="HDSC:145"/>
+            <require DsubFamily="HC32L15"/>
+        </condition>
+        
+        <condition id="HC32L150FX">
+            <description>HDSC HC32L150FX Device</description>
+            <require Dname="HC32L150F[A8]"/>
+        </condition>
+        
+        <condition id="HC32L150JX">
+            <description>HDSC HC32L150JX Device</description>
+            <require Dname="HC32L150J[A8]"/>
+        </condition>
+
+        <condition id="HC32L150KX">
+            <description>HDSC HC32L150KX Device</description>
+            <require Dname="HC32L150K[A8]"/>
+        </condition>
+
+        <condition id="HC32L156JX">
+            <description>HDSC HC32L156JX Device</description>
+            <require Dname="HC32L156J[A8]"/>
+        </condition>
+
+        <condition id="HC32L156KX">
+            <description>HDSC HC32L156KX Device</description>
+            <require Dname="HC32L156K[A8]"/>
+        </condition>
+        
+        <condition id="HC32L157KX">
+            <description>HDSC HC32L157KX Device</description>
+            <require Dname="HC32L157K[A8]"/>
+        </condition>
+        
+        <!-- Device + CMSIS Conditions -->
+        <condition id="HC32L15 CMSIS">
+            <description>HDSC HC32L15 Series devices and CMSIS-CORE</description>
+            <require condition="HC32L15"/>
+            <require Cclass="CMSIS" Cgroup="CORE"/>
+        </condition>
+ 
+    </conditions>
+    
+    <!-- component section (optional for all Software Packs)-->
+    <components>
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32L15 CMSIS">
+            <description>System Startup for HC32L15 series</description>
+
+            <files>
+                <!-- include folder / file -->
+                <file category="include" name="Device/Include/"/>
+                <file category="header"  name="Device/Include/hc32l15.h"/>
+                <!-- startup / system file -->
+                <file category="sourceAsm" name="Device/Source/ARM/startup_hc32l15.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
+                <file category="sourceC"   name="Device/Source/system_hc32l15.c" attr="config" version="1.0.0"/>
+                <file category="sourceC"   name="Device/Source/main.c" attr="template"  select="empty project" version="1.0.0"/>
+                <file category="header"    name="Device/Include/system_hc32l15.h"      attr="config"     version="1.0.0"/>
+                <file category="header"    name="Device/Include/HC32L150FX.h"  condition="HC32L150FX"     attr="config" version="1.0.0"/>
+                <file category="header"    name="Device/Include/HC32L150JX.h"  condition="HC32L150JX"     attr="config" version="1.0.0"/>
+                <file category="header"    name="Device/Include/HC32L150KX.h"  condition="HC32L150KX"     attr="config" version="1.0.0"/>
+                <file category="header"    name="Device/Include/HC32L156JX.h"  condition="HC32L156JX"     attr="config" version="1.0.0"/>
+                <file category="header"    name="Device/Include/HC32L156KX.h"  condition="HC32L156KX"     attr="config" version="1.0.0"/>
+                <file category="header"    name="Device/Include/HC32L157KX.h"  condition="HC32L157KX"     attr="config" version="1.0.0"/>
+            </files>
+        </component>
+    </components>
+
+
+</package>
