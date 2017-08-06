@@ -15,6 +15,9 @@
         <release version="1.0.0" date="2017-07-02">
             Initial Version
         </release>
+                <release version="1.0.1" date="2017-07-03">
+            Initial Version
+        </release>
     </releases>
 
     <keywords>
@@ -35,7 +38,7 @@
             <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
             <!-- ************************  Sub-family 'hc32l15'  **************************** -->
             <subFamily DsubFamily="HC32L15">
-                <processor  Dclock="16000000"/>
+                <processor  Dclock="32000000"/>
                 <!-- *************************  Device 'HC32L15'  ***************************** -->
                 <device Dname="HC32L150KA">
                     <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
