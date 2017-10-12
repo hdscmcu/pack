@@ -2,8 +2,8 @@
 
 <package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
     <vendor>HDSC</vendor>
-    <name>HC32F(M)14</name>
-    <description>HC32F(M)14 ARM Cortex-M0+ Device Family Pack</description>
+    <name>HC32F_M14</name>
+    <description>HC32F_M14 ARM Cortex-M0+ Device Family Pack</description>
     <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
     <supportContact>support@hdsc.com</supportContact>
     <!-- optional license file -->
@@ -20,15 +20,15 @@
     <keywords>
         <!-- keywords for indexing -->
         <keyword>HDSC</keyword>
-        <keyword>HC32F(M)14</keyword>
+        <keyword>HC32F_M14</keyword>
     </keywords>
 
     <devices>
-        <family Dfamily="HC32F(M)14-Series" Dvendor="HDSC:145">
+        <family Dfamily="HC32F_M14-Series" Dvendor="HDSC:145">
             <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="4800000" />
             <debugconfig type="swd" clock="1000000" />
             <description>
-                The HC32F(M)14 device family contains an ARM Cortex-M0+ processor, running up to 48 MHz with a versatile set of on-chip peripherals.
+                The HC32F_M14 device family contains an ARM Cortex-M0+ processor, running up to 48 MHz with a versatile set of on-chip peripherals.
             </description>
 
             <compile    header="Device/Include/hc32f_m14.h"/>
@@ -92,8 +92,8 @@
             <require Tcompiler="ARMCC"/>
         </condition>
 
-        <condition id="HC32F(M)14">
-            <description>HDSC HC32F(M)14 Device</description>
+        <condition id="HC32F_M14">
+            <description>HDSC HC32F_M14 Device</description>
             <require Dvendor="HDSC:145"/>
             <require DsubFamily="HC32F14"/>
             <require DsubFamily="HC32M14"/>
@@ -130,9 +130,9 @@
         </condition>
         
         <!-- Device + CMSIS Conditions -->
-        <condition id="HC32F(M)14 CMSIS">
-            <description>HDSC HC32F(M)14 Series devices and CMSIS-CORE</description>
-            <require condition="HC32F(M)14"/>
+        <condition id="HC32F_M14 CMSIS">
+            <description>HDSC HC32F_M14 Series devices and CMSIS-CORE</description>
+            <require condition="HC32F_M14"/>
             <require Cclass="CMSIS" Cgroup="CORE"/>
         </condition>
  
@@ -140,8 +140,8 @@
     
     <!-- component section (optional for all Software Packs)-->
     <components>
-        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32F(M)14 CMSIS">
-            <description>System Startup for HC32F(M)14 series</description>
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32F_M14 CMSIS">
+            <description>System Startup for HC32F_M14 series</description>
 
             <files>
                 <!-- include folder / file -->

@@ -5,6 +5,6 @@
   <timestamp>2017-08-15:00:10.7300074+00:00</timestamp>
   <pindex>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L15" version="1.0.1"/>
-    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F(M)14" version="1.0.0"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F_M14" version="1.0.0"/>
   </pindex>
 </index>
