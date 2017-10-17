@@ -15,27 +15,26 @@
         <release version="1.0.0" date="2017-07-02">
             Initial Version
         </release>
-                <release version="1.0.1" date="2017-07-03">
-            Initial Version
+        <release version="1.0.1" date="2017-10-17">
+            Revise typo, refine file structure
         </release>
     </releases>
 
     <keywords>
         <!-- keywords for indexing -->
         <keyword>HDSC</keyword>
+        <keyword>Device Support</keyword>
         <keyword>HC32L15</keyword>
     </keywords>
 
     <devices>
         <family Dfamily="HC32L15-Series" Dvendor="HDSC:145">
-            <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="4000000" />
+            <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="3200000" />
             <debugconfig type="swd" clock="1000000" />
             <description>
                 The HC32L15 device family contains an ARM Cortex-M0+ processor, running up to 32 MHz with a versatile set of on-chip peripherals.
             </description>
 
-            <compile    header="Device/Include/hc32l15.h"/>
-            <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
             <!-- ************************  Sub-family 'hc32l15'  **************************** -->
             <subFamily DsubFamily="HC32L15">
                 <processor  Dclock="32000000"/>
@@ -44,37 +43,53 @@
                     <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L150KX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L150KX__"/>
                 </device>
+                
                 <device Dname="HC32L150K8">
                     <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L150KX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L150KX__"/>
-                    
                 </device>
+                
                 <device Dname="HC32L150JA">
                     <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L150JX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L150JX__"/>
                 </device>
+                
                 <device Dname="HC32L150J8">
                     <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L150JX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L150JX__"/>
                 </device>
+                
                 <device Dname="HC32L150FA">
                     <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L150FX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L150FX__"/>
                 </device>
+                
                 <device Dname="HC32L150F8">
                     <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L150FX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L150FX__"/>
                 </device>
                 
@@ -82,24 +97,35 @@
                     <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L156KX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L156KX__"/>
                 </device>
+                
                 <device Dname="HC32L156K8">
                     <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L156KX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L156KX__"/>
                 </device>
+                
                 <device Dname="HC32L156JA">
                     <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L156JX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L156JX__"/>
                 </device>
+                
                 <device Dname="HC32L156J8">
                     <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L156JX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L156JX__"/>
                 </device>
                 
@@ -107,14 +133,20 @@
                     <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L157KX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L157KX__"/>
                 </device>
+                
                 <device Dname="HC32L157K8">
                     <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L157KX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L1567X__"/>
                 </device>
+                
             </subFamily>
         </family>
     </devices>
@@ -124,17 +156,21 @@
   <examples>
   </examples>
   -->
-    <conditions> 
+    <conditions>
+        <!-- Compiler Conditions -->
         <condition id="Compiler ARMCC">
             <require Tcompiler="ARMCC"/>
         </condition>
 
+        <!-- Device Conditions -->
         <condition id="HC32L15">
             <description>HDSC HC32L15 Device</description>
             <require Dvendor="HDSC:145"/>
-            <require DsubFamily="HC32L15"/>
+            <require Dname="HC32L15*"/>
+            <require Cclass="Device" Cgroup="Startup"/>
         </condition>
         
+        <!-- P/N Conditions -->
         <condition id="HC32L150FX">
             <description>HDSC HC32L150FX Device</description>
             <require Dname="HC32L150F[A8]"/>
@@ -183,20 +219,19 @@
                 <!-- include folder / file -->
                 <file category="include" name="Device/Include/"/>
                 <file category="header"  name="Device/Include/hc32l15.h"/>
+                <file category="header"  name="Device/Include/HC32L150FX.h"  condition="HC32L150FX" attr="config" version="1.0.0"/>
+                <file category="header"  name="Device/Include/HC32L150JX.h"  condition="HC32L150JX" attr="config" version="1.0.0"/>
+                <file category="header"  name="Device/Include/HC32L150KX.h"  condition="HC32L150KX" attr="config" version="1.0.0"/>
+                <file category="header"  name="Device/Include/HC32L156JX.h"  condition="HC32L156JX" attr="config" version="1.0.0"/>
+                <file category="header"  name="Device/Include/HC32L156KX.h"  condition="HC32L156KX" attr="config" version="1.0.0"/>
+                <file category="header"  name="Device/Include/HC32L157KX.h"  condition="HC32L157KX" attr="config" version="1.0.0"/>
                 <!-- startup / system file -->
-                <file category="sourceAsm" name="Device/Source/ARM/startup_hc32l15.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
-                <file category="sourceC"   name="Device/Source/system_hc32l15.c" attr="config" version="1.0.0"/>
-                <file category="sourceC"   name="Device/Source/main.c" attr="template"  select="empty project" version="1.0.0"/>
-                <file category="header"    name="Device/Include/system_hc32l15.h"      attr="config"     version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32L150FX.h"  condition="HC32L150FX"     attr="config" version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32L150JX.h"  condition="HC32L150JX"     attr="config" version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32L150KX.h"  condition="HC32L150KX"     attr="config" version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32L156JX.h"  condition="HC32L156JX"     attr="config" version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32L156KX.h"  condition="HC32L156KX"     attr="config" version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32L157KX.h"  condition="HC32L157KX"     attr="config" version="1.0.0"/>
+                <file category="source" name="Device/Source/ARM/startup_hc32l15.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
+                <file category="header" name="Device/Include/system_hc32l15.h"      attr="config"     version="1.0.0"/>
+                <file category="source" name="Device/Source/system_hc32l15.c" attr="config" version="1.0.0"/>
+                
+                <file category="source" name="Device/Source/main.c" attr="template"  select="empty project" version="1.0.0"/>
             </files>
         </component>
     </components>
-
-
 </package>

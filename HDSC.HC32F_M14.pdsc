@@ -20,6 +20,7 @@
     <keywords>
         <!-- keywords for indexing -->
         <keyword>HDSC</keyword>
+        <keyword>Device Support</keyword>
         <keyword>HC32F_M14</keyword>
     </keywords>
 
@@ -31,53 +32,66 @@
                 The HC32F_M14 device family contains an ARM Cortex-M0+ processor, running up to 48 MHz with a versatile set of on-chip peripherals.
             </description>
 
-            <compile    header="Device/Include/hc32f_m14.h"/>
-            <algorithm  name="Flash/HC32F_M14.FLM" start="0x00000000"  size="0x20000" default="1"/>
-            <!-- ************************  Sub-family 'hc32m14'  **************************** -->
+            <!-- ************************  Subfamily 'HC32M140'  **************************** -->
             <subFamily DsubFamily="HC32M14">
-                <processor  Dclock="48000000"/>
-                <!-- *************************  Device 'HC32M14'  ***************************** -->
-                <device Dname="HC32M140KA">
-                    <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
-                    <memory  id="IRAM1" start="0x20000000"  size="0x2000"  init ="0"  default="1"/>
-                    <debug svd="SVD/HC32M140KX.SFR"/>
-                    <compile  define="__HC32M140KX__"/>
-                </device>
-                <device Dname="HC32M140J8">
-                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
-                    <memory  id="IRAM1" start="0x20000000"  size="0x2000"  init ="0"  default="1"/>
-                    <debug svd="SVD/HC32M140JX.SFR"/>
-                    <compile  define="__HC32M140JX__"/>
-                </device>
-                <device Dname="HC32M140F8">
-                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
-                    <memory  id="IRAM1" start="0x20000000"  size="0x2000"  init ="0"  default="1"/>
-                    <debug svd="SVD/HC32M140FX.SFR"/>
-                    <compile  define="__HC32M140FX__"/>
-                </device>
-                </subFamily>
-                <!-- ************************  Sub-family 'hc32F14'  **************************** -->
+                <processor Dclock="48000000"/>
+                    <!-- *************************  Device 'HC32M140KA'  ***************************** -->
+                    <device Dname="HC32M140KA">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x20000" startup="1" default="1"/>
+                        <memory    id="IRAM1"                   start="0x20000000" size="0x2000" init   ="0" default="1"/>
+                        <algorithm  name="Flash/HC32F_M14.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                        <compile header="Device/Include/HC32M140KX.h"/>
+                        <debug svd="SVD/HC32M140KX.SFR"/>
+                    </device>
+            
+                    <!-- *************************  Device 'HC32M140J8'  ***************************** -->
+                    <device Dname="HC32M140J8">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x10000" startup="1" default="1"/>
+                        <memory    id="IRAM1"                   start="0x20000000" size="0x2000" init   ="0" default="1"/>
+                        <algorithm  name="Flash/HC32F_M14.FLM" start="0x00000000"  size="0x10000" default="1"/>
+                        <compile header="Device/Include/HC32M140JX.h"/>
+                        <debug svd="SVD/HC32M140JX.SFR"/>
+                    </device>
+                    
+                    <!-- *************************  Device 'HC32M140F8'  ***************************** -->
+                    <device Dname="HC32M140F8">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x10000" startup="1" default="1"/>
+                        <memory    id="IRAM1"                   start="0x20000000" size="0x2000" init   ="0" default="1"/>
+                        <algorithm  name="Flash/HC32F_M14.FLM" start="0x00000000"  size="0x10000" default="1"/>
+                        <compile header="Device/Include/HC32M140FX.h"/>
+                        <debug svd="SVD/HC32M140FX.SFR"/>
+                    </device>
+            </subFamily>
+            
+            <!-- ************************  Subfamily 'HC32F146'  **************************** -->
             <subFamily DsubFamily="HC32F14">
-                <processor  Dclock="48000000"/>
-                <!-- *************************  Device 'HC32F14'  ***************************** -->
-                <device Dname="HC32F146KA">
-                    <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
-                    <memory  id="IRAM1" start="0x20000000"  size="0x2000"  init ="0"  default="1"/>
-                    <debug svd="SVD/HC32F146KX.SFR"/>
-                    <compile  define="__HC32F146KX__"/>
-                </device>
-                <device Dname="HC32F146J8">
-                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
-                    <memory  id="IRAM1" start="0x20000000"  size="0x2000"  init ="0"  default="1"/>
-                    <debug svd="SVD/HC32F146JX.SFR"/>
-                    <compile  define="__HC32F146JX__"/>
-                </device>
-                <device Dname="HC32F146F8">
-                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
-                    <memory  id="IRAM1" start="0x20000000"  size="0x2000"  init ="0"  default="1"/>
-                    <debug svd="SVD/HC32F146FX.SFR"/>
-                    <compile  define="__HC32F146FX__"/>
-                </device>
+                <processor Dclock="48000000"/>
+                    <!-- *************************  Device 'HC32F146KA'  ***************************** -->
+                    <device Dname="HC32F146KA">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x20000" startup="1" default="1"/>
+                        <memory    id="IRAM1"                   start="0x20000000" size="0x2000" init   ="0" default="1"/>
+                        <algorithm  name="Flash/HC32F_M14.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                        <compile header="Device/Include/HC32F146KX.h"/>
+                        <debug svd="SVD/HC32F146KX.SFR"/>
+                    </device>
+            
+                    <!-- *************************  Device 'HC32F146KA'  ***************************** -->
+                    <device Dname="HC32F146J8">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x10000" startup="1" default="1"/>
+                        <memory    id="IRAM1"                   start="0x20000000" size="0x2000" init   ="0" default="1"/>
+                        <algorithm  name="Flash/HC32F_M14.FLM" start="0x00000000"  size="0x10000" default="1"/>
+                        <compile header="Device/Include/HC32F146JX.h"/>
+                        <debug svd="SVD/HC32F146JX.SFR"/>
+                    </device>
+                    
+                    <!-- *************************  Device 'HC32F146FA'  ***************************** -->
+                    <device Dname="HC32F146F8">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x10000" startup="1" default="1"/>
+                        <memory    id="IRAM1"                   start="0x20000000" size="0x2000" init   ="0" default="1"/>
+                        <algorithm  name="Flash/HC32F_M14.FLM" start="0x00000000"  size="0x10000" default="1"/>
+                        <compile header="Device/Include/HC32F146FX.h"/>
+                        <debug svd="SVD/HC32F146FX.SFR"/>
+                    </device>
             </subFamily>
         </family>
     </devices>
@@ -87,79 +101,65 @@
   <examples>
   </examples>
   -->
-    <conditions> 
+    <conditions>
+        <!-- Compiler Conditions -->
         <condition id="Compiler ARMCC">
             <require Tcompiler="ARMCC"/>
         </condition>
 
+        <!-- Device Conditions -->
         <condition id="HC32F_M14">
             <description>HDSC HC32F_M14 Device</description>
-            <require Dvendor="HDSC:145"/>
-            <require DsubFamily="HC32F14"/>
-            <require DsubFamily="HC32M14"/>
+            <require Dvendor="HDSC:145" Dname="HC32[FM]14*"/>
+            <require Cclass="Device" Cgroup="Startup"/>
         </condition>
         
-        <condition id="HC32M140FX">
-            <description>HDSC HC32M140FX Device</description>
-            <require Dname="HC32M140F8"/>
-        </condition>
-        
-        <condition id="HC32M140JX">
-            <description>HDSC HC32M140JX Device</description>
-            <require Dname="HC32M140J8"/>
-        </condition>
-
-        <condition id="HC32M140KX">
-            <description>HDSC HC32M140KX Device</description>
+        <!-- P/N Conditions -->
+        <condition id = "HC32M140KX">
             <require Dname="HC32M140KA"/>
         </condition>
-
-        <condition id="HC32F146FX">
-            <description>HDSC HC32F146FX Device</description>
-            <require Dname="HC32F146F8"/>
+        <condition id = "HC32M140JX">
+            <require Dname="HC32M140J8"/>
         </condition>
-        
-        <condition id="HC32F146JX">
-            <description>HDSC HC32F146JX Device</description>
-            <require Dname="HC32F146J8"/>
+        <condition id = "HC32M140FX">
+            <require Dname="HC32M140F8"/>
         </condition>
-
-        <condition id="HC32F146KX">
-            <description>HDSC HC32F146KX Device</description>
+        <condition id = "HC32F146KX">
             <require Dname="HC32F146KA"/>
         </condition>
-        
+        <condition id = "HC32F146JX">
+            <require Dname="HC32F146J8"/>
+        </condition>
+        <condition id = "HC32F146FX">
+            <require Dname="HC32F146F8"/>
+        </condition>
         <!-- Device + CMSIS Conditions -->
         <condition id="HC32F_M14 CMSIS">
             <description>HDSC HC32F_M14 Series devices and CMSIS-CORE</description>
             <require condition="HC32F_M14"/>
             <require Cclass="CMSIS" Cgroup="CORE"/>
         </condition>
- 
     </conditions>
-    
-    <!-- component section (optional for all Software Packs)-->
     <components>
+    <!-- Startup HC32F_M14 -->
         <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32F_M14 CMSIS">
             <description>System Startup for HC32F_M14 series</description>
-
             <files>
-                <!-- include folder / file -->
+                <!-- include folder -->
                 <file category="include" name="Device/Include/"/>
-                <file category="header"  name="Device/Include/hc32f_m14.h"/>
-                <!-- startup / system file -->
-                <file category="sourceAsm" name="Device/Source/ARM/startup_hc32f_m14.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
-                <file category="sourceC"   name="Device/Source/system_hc32f_m14.c" attr="config" version="1.0.0"/>
-                <file category="sourceC"   name="Device/Source/main.c" attr="template"  select="empty project" version="1.0.0"/>
-                <file category="header"    name="Device/Include/system_hc32f_m14.h"      attr="config"     version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32M140FX.h"  condition="HC32M140FX"     attr="config" version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32M140JX.h"  condition="HC32M140JX"     attr="config" version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32M140KX.h"  condition="HC32M140KX"     attr="config" version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32F146FX.h"  condition="HC32F146FX"     attr="config" version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32F146JX.h"  condition="HC32F146JX"     attr="config" version="1.0.0"/>
-                <file category="header"    name="Device/Include/HC32F146KX.h"  condition="HC32F146KX"     attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/hc32f_m14.h"/>
+                <file category="header" name="Device/Include/HC32M140KX.h" condition="HC32M140KX" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32M140JX.h" condition="HC32M140JX" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32M140FX.h" condition="HC32M140FX" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F146KX.h" condition="HC32F146KX" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F146JX.h" condition="HC32F146JX" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F146FX.h" condition="HC32F146FX" attr="config" version="1.0.0"/>
+                <!-- startup file -->
+                <file category="source" name="Device/Source/ARM/startup_hc32f_m14.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
+                <!-- system file -->
+                <file category="source" name="Device/Source/system_hc32f_m14.c"  attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/system_hc32f_m14.h" attr="config" version="1.0.0"/>
             </files>
         </component>
     </components>
- 
 </package>
