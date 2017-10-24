@@ -29,7 +29,7 @@
 
     <devices>
         <family Dfamily="HC32L15-Series" Dvendor="HDSC:145">
-            <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="3200000" />
+            <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="32000000" />
             <debugconfig type="swd" clock="1000000" />
             <description>
                 The HC32L15 device family contains an ARM Cortex-M0+ processor, running up to 32 MHz with a versatile set of on-chip peripherals.

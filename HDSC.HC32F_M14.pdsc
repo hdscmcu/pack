@@ -26,7 +26,7 @@
 
     <devices>
         <family Dfamily="HC32F_M14-Series" Dvendor="HDSC:145">
-            <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="4800000" />
+            <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="48000000" />
             <debugconfig type="swd" clock="1000000" />
             <description>
                 The HC32F_M14 device family contains an ARM Cortex-M0+ processor, running up to 48 MHz with a versatile set of on-chip peripherals.
@@ -75,7 +75,7 @@
                         <debug svd="SVD/HC32F146KX.SFR"/>
                     </device>
             
-                    <!-- *************************  Device 'HC32F146KA'  ***************************** -->
+                    <!-- *************************  Device 'HC32F146J8'  ***************************** -->
                     <device Dname="HC32F146J8">
                         <memory    id="IROM1"                   start="0x00000000" size="0x10000" startup="1" default="1"/>
                         <memory    id="IRAM1"                   start="0x20000000" size="0x2000" init   ="0" default="1"/>
@@ -84,7 +84,7 @@
                         <debug svd="SVD/HC32F146JX.SFR"/>
                     </device>
                     
-                    <!-- *************************  Device 'HC32F146FA'  ***************************** -->
+                    <!-- *************************  Device 'HC32F146F8'  ***************************** -->
                     <device Dname="HC32F146F8">
                         <memory    id="IROM1"                   start="0x00000000" size="0x10000" startup="1" default="1"/>
                         <memory    id="IRAM1"                   start="0x20000000" size="0x2000" init   ="0" default="1"/>
