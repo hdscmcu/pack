@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+    <vendor>HDSC</vendor>
+    <name>HC32L110</name>
+    <description>HC32L110 ARM Cortex-M0+ Device Family Pack</description>
+    <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
+    <supportContact>support@hdsc.com</supportContact>
+    <!-- optional license file -->
+    
+    <!-- 
+    <license>
+    </license>
+    -->
+  
+    <releases>
+        <release version="1.0.0" date="2017-10-23">
+            Initial Version
+        </release>
+    </releases>
+
+    <keywords>
+        <!-- keywords for indexing -->
+        <keyword>HDSC</keyword>
+        <keyword>Device Support</keyword>
+        <keyword>HC32L110</keyword>
+    </keywords>
+
+  
+    <devices>
+        <family Dfamily="HC32L110-Series" Dvendor="HDSC:145">
+        <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="32000000" />
+        <debugconfig type="swd" clock="1000000" />
+        <description>
+            The HC32L110 device family contains an ARM Cortex-M0+ processor, running up to 32 MHz with a versatile set of on-chip peripherals.
+        </description>
+        
+        <!-- ************************  Subfamily 'HC32L110'  **************************** -->
+        <subFamily DsubFamily="HC32L110">
+            <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32L110C6UA'  ***************************** -->
+                <device Dname="HC32L110C6UA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x8000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x1000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/HC32L110B6_C6.FLM" start="0x00000000"  size="0x8000" default="1"/>
+                    <compile header="Device/Include/HC32L110C.h"/>
+                    <debug svd="SVD/HC32L110C.SFR"/>
+                </device>    
+            
+        <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32L110C6PA'  ***************************** -->
+                <device Dname="HC32L110C6PA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x8000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x1000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/HC32L110B6_C6.FLM" start="0x00000000"  size="0x8000" default="1"/>
+                    <compile header="Device/Include/HC32L110C.h"/>
+                    <debug svd="SVD/HC32L110C.SFR"/>
+                </device>
+
+        <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32L110B6PA'  ***************************** -->
+                <device Dname="HC32L110B6PA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x8000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x1000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/HC32L110B6_C6.FLM" start="0x00000000"  size="0x8000" default="1"/>
+                    <compile header="Device/Include/HC32L110B.h"/>
+                    <debug svd="SVD/HC32L110B.SFR"/>
+                </device>            
+                    
+        <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32L110C4UA'  ***************************** -->
+                <device Dname="HC32L110C4UA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x4000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x800"    init="0"    default="1"/>
+                    <algorithm  name="Flash/HC32L110B4_C4.FLM" start="0x00000000"  size="0x4000" default="1"/>
+                    <compile header="Device/Include/HC32L110C.h"/>
+                    <debug svd="SVD/HC32L110C.SFR"/>
+                </device>
+                
+        <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32L110C4PA'  ***************************** -->
+                <device Dname="HC32L110C4PA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x4000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x800"    init="0"    default="1"/>
+                    <algorithm  name="Flash/HC32L110B4_C4.FLM" start="0x00000000"  size="0x4000" default="1"/>
+                    <compile header="Device/Include/HC32L110C.h"/>
+                    <debug svd="SVD/HC32L110C.SFR"/>
+                </device>
+        
+        <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32L110B4PA'  ***************************** -->
+                <device Dname="HC32L110B4PA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x4000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x800"    init="0"    default="1"/>
+                    <algorithm  name="Flash/HC32L110B4_C4.FLM" start="0x00000000"  size="0x4000" default="1"/>
+                    <compile header="Device/Include/HC32L110B.h"/>
+                    <debug svd="SVD/HC32L110B.SFR"/>
+                </device>
+        </subFamily>
+        </family>
+    </devices>
+
+  <!-- examples section (optional for all Software Packs)-->
+  <!--
+  <examples>
+  </examples>
+  -->
+  
+  <!-- conditions section (optional for all Software Packs)-->
+    
+    <conditions>
+        <!-- Compiler Conditions -->
+        <condition id="Compiler ARMCC">
+            <require Tcompiler="ARMCC"/>
+        </condition>
+        
+        <!-- Device Conditions -->
+        <condition id="HC32L110">
+            <description>HDSC HC32L110 Device</description>
+            <require Dvendor="HDSC:145" Dname="HC32L110*"/>
+            <require Cclass="Device" Cgroup="Startup"/>
+        </condition>
+        
+         <!-- P/N Conditions -->
+        <condition id = "HC32L110C6UA">
+            <require Dname="HC32L110C6UA"/>
+        </condition>
+        <condition id = "HC32L110C6PA">
+            <require Dname="HC32L110C6PA"/>
+        </condition>
+        <condition id = "HC32L110B6PA">
+            <require Dname="HC32L110B6PA"/>
+        </condition>
+        <condition id = "HC32L110C4UA">
+            <require Dname="HC32L110C4UA"/>
+        </condition>
+        <condition id = "HC32L110C4PA">
+            <require Dname="HC32L110C4PA"/>
+        </condition>
+        <condition id = "HC32L110B4PA">
+            <require Dname="HC32L110B4PA"/>
+        </condition>
+        
+        <!-- Device + CMSIS Conditions -->
+        <condition id="HC32L110 CMSIS">
+            <description>HDSC HC32L110 Series devices and CMSIS-CORE</description>
+            <require condition="HC32L110"/>
+            <require Cclass="CMSIS" Cgroup="CORE"/>
+        </condition>        
+    </conditions>
+
+  
+  <!-- component section (optional for all Software Packs)-->
+
+    <components>
+        <!-- Startup HC32L110 -->
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32L110 CMSIS">
+        <description>System Startup for HC32L110 series</description>
+        <files>
+            <!-- include folder -->
+            <file category="include" name="Device/Include/"/>
+            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C6UA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C6PA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L110B.h" condition="HC32L110B6PA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C4UA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C4PA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L110B.h" condition="HC32L110B4PA" attr="config" version="1.0.0"/>
+            
+            <!-- startup file -->
+            <file category="sourceAsm" name="Device/Source/ARM/startup_hc32l110.s" attr="config" condition="Compiler ARMCC" version="1.0.0"/>
+            
+            <!-- system file -->
+            <file category="sourceC" name="Device/Source/main.c" attr="template" select="empty project" version="1.0.0"/>
+            <file category="sourceC" name="Device/Source/system_hc32l110.c" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/system_hc32l110.h" attr="config" version="1.0.0"/>
+        </files>
+        </component>
+    </components>
+
+</package>
