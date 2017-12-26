@@ -45,9 +45,8 @@
                     <algorithm  name="Flash/HC32L110B6_C6.FLM" start="0x00000000"  size="0x8000" default="1"/>
                     <compile header="Device/Include/HC32L110C.h"/>
                     <debug svd="SVD/HC32L110C.SFR"/>
-                </device>    
+                </device>
             
-        <processor Dclock="48000000"/>
                 <!-- *************************  Device 'HC32L110C6PA'  ***************************** -->
                 <device Dname="HC32L110C6PA">
                     <memory        id="IROM1"                start="0x00000000"    size="0x8000"    startup="1"    default="1"/>
@@ -57,7 +56,6 @@
                     <debug svd="SVD/HC32L110C.SFR"/>
                 </device>
 
-        <processor Dclock="48000000"/>
                 <!-- *************************  Device 'HC32L110B6PA'  ***************************** -->
                 <device Dname="HC32L110B6PA">
                     <memory        id="IROM1"                start="0x00000000"    size="0x8000"    startup="1"    default="1"/>
@@ -65,9 +63,8 @@
                     <algorithm  name="Flash/HC32L110B6_C6.FLM" start="0x00000000"  size="0x8000" default="1"/>
                     <compile header="Device/Include/HC32L110B.h"/>
                     <debug svd="SVD/HC32L110B.SFR"/>
-                </device>            
+                </device>
                     
-        <processor Dclock="48000000"/>
                 <!-- *************************  Device 'HC32L110C4UA'  ***************************** -->
                 <device Dname="HC32L110C4UA">
                     <memory        id="IROM1"                start="0x00000000"    size="0x4000"    startup="1"    default="1"/>
@@ -77,7 +74,6 @@
                     <debug svd="SVD/HC32L110C.SFR"/>
                 </device>
                 
-        <processor Dclock="48000000"/>
                 <!-- *************************  Device 'HC32L110C4PA'  ***************************** -->
                 <device Dname="HC32L110C4PA">
                     <memory        id="IROM1"                start="0x00000000"    size="0x4000"    startup="1"    default="1"/>
@@ -87,7 +83,6 @@
                     <debug svd="SVD/HC32L110C.SFR"/>
                 </device>
         
-        <processor Dclock="48000000"/>
                 <!-- *************************  Device 'HC32L110B4PA'  ***************************** -->
                 <device Dname="HC32L110B4PA">
                     <memory        id="IROM1"                start="0x00000000"    size="0x4000"    startup="1"    default="1"/>
