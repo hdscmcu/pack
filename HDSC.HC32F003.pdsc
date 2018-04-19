@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+    <vendor>HDSC</vendor>
+    <name>HC32F003</name>
+    <description>HC32F003 ARM Cortex-M0+ Device Family Pack</description>
+    <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
+    <supportContact>support@hdsc.com</supportContact>
+    <!-- optional license file -->
+    
+    <!-- 
+    <license>
+    </license>
+    -->
+  
+    <releases>
+        <release version="1.0.0" date="2018-02-01">
+            Initial Version
+        </release>
+    </releases>
+
+    <keywords>
+        <!-- keywords for indexing -->
+        <keyword>HDSC</keyword>
+        <keyword>Device Support</keyword>
+        <keyword>HC32F003</keyword>
+    </keywords>
+
+  
+    <devices>
+        <family Dfamily="HC32F003-Series" Dvendor="HDSC:145">
+        <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="32000000" />
+        <debugconfig type="swd" clock="1000000" />
+        <description>
+            The HC32F003 device family contains an ARM Cortex-M0+ processor, running up to 32 MHz with a versatile set of on-chip peripherals.
+        </description>
+        
+        <!-- ************************  Subfamily 'HC32F003'  **************************** -->
+        <subFamily DsubFamily="HC32F003">
+            <processor Dclock="32000000"/>
+                <!-- *************************  Device 'HC32F003C4UA'  ***************************** -->
+                <device Dname="HC32F003C4UA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x4000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x800"    init="0"    default="1"/>
+                    <algorithm  name="Flash/HC32F003.FLM" start="0x00000000"  size="0x4000" default="1"/>
+                    <compile header="Device/Include/HC32F003.h"/>
+                    <debug svd="SVD/HC32F003.SFR"/>
+                </device>
+            
+                <!-- *************************  Device 'HC32F003C4PA'  ***************************** -->
+                <device Dname="HC32F003C4PA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x4000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x800"    init="0"    default="1"/>
+                    <algorithm  name="Flash/HC32F003.FLM" start="0x00000000"  size="0x4000" default="1"/>
+                    <compile header="Device/Include/HC32F003.h"/>
+                    <debug svd="SVD/HC32F003.SFR"/>
+                </device>
+                
+        </subFamily>
+        </family>
+    </devices>
+
+  <!-- examples section (optional for all Software Packs)-->
+  <!--
+  <examples>
+  </examples>
+  -->
+  
+  <!-- conditions section (optional for all Software Packs)-->
+    
+    <conditions>
+        <!-- Compiler Conditions -->
+        <condition id="Compiler ARMCC">
+            <require Tcompiler="ARMCC"/>
+        </condition>
+        
+        <!-- Device Conditions -->
+        <condition id="HC32F003">
+            <description>HDSC HC32F003 Device</description>
+            <require Dvendor="HDSC:145" Dname="HC32F003*"/>
+            <require Cclass="Device" Cgroup="Startup"/>
+        </condition>
+        
+         <!-- P/N Conditions -->
+        <condition id = "HC32F003C4UA">
+            <require Dname="HC32F003C4UA"/>
+        </condition>
+        <condition id = "HC32F003C4PA">
+            <require Dname="HC32F003C4PA"/>
+        </condition>
+        
+        <!-- Device + CMSIS Conditions -->
+        <condition id="HC32F003 CMSIS">
+            <description>HDSC HC32F003 Series devices and CMSIS-CORE</description>
+            <require condition="HC32F003"/>
+            <require Cclass="CMSIS" Cgroup="CORE"/>
+        </condition>        
+    </conditions>
+
+  
+  <!-- component section (optional for all Software Packs)-->
+
+    <components>
+        <!-- Startup HC32F003 -->
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32F003 CMSIS">
+        <description>System Startup for HC32F003 series</description>
+        <files>
+            <!-- include folder -->
+            <file category="include" name="Device/Include/"/>
+            <file category="header" name="Device/Include/HC32F003.h" condition="HC32F003C4UA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32F003.h" condition="HC32F003C4PA" attr="config" version="1.0.0"/>
+            
+            <!-- startup file -->
+            <file category="sourceAsm" name="Device/Source/ARM/startup_hc32f003.s" attr="config" condition="Compiler ARMCC" version="1.0.0"/>
+            
+            <!-- system file -->
+            <file category="sourceC" name="Device/Source/main.c" attr="template" select="empty project" version="1.0.0"/>
+            <file category="sourceC" name="Device/Source/system_hc32f003.c" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/system_hc32f003.h" attr="config" version="1.0.0"/>
+        </files>
+        </component>
+    </components>
+
+</package>

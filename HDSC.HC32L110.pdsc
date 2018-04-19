@@ -17,6 +17,9 @@
         <release version="1.0.0" date="2017-10-23">
             Initial Version
         </release>
+        <release version="1.0.1" date="2018-01-31">
+            Typo revise
+        </release>
     </releases>
 
     <keywords>
@@ -37,7 +40,7 @@
         
         <!-- ************************  Subfamily 'HC32L110'  **************************** -->
         <subFamily DsubFamily="HC32L110">
-            <processor Dclock="48000000"/>
+            <processor Dclock="32000000"/>
                 <!-- *************************  Device 'HC32L110C6UA'  ***************************** -->
                 <device Dname="HC32L110C6UA">
                     <memory        id="IROM1"                start="0x00000000"    size="0x8000"    startup="1"    default="1"/>
