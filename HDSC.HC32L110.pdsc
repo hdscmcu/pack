@@ -14,11 +14,14 @@
     -->
   
     <releases>
-        <release version="1.0.0" date="2017-10-23">
-            Initial Version
-        </release>
+        <release version="1.0.2" date="2018-06-28">
+            Version revise
+        </release>    
         <release version="1.0.1" date="2018-01-31">
             Typo revise
+        </release>    
+        <release version="1.0.0" date="2017-10-23">
+            Initial Version
         </release>
     </releases>
 

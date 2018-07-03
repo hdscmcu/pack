@@ -6,7 +6,7 @@
   <pindex>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L15" version="1.0.1"/>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F_M14" version="1.0.0"/>
-    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L110" version="1.0.1"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L110" version="1.0.2"/>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F003" version="1.0.0"/>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F005" version="1.0.0"/>
   </pindex>
