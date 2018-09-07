@@ -12,6 +12,9 @@
   </license>
   -->
     <releases>
+        <release version="1.0.3" date="2018-09-06">
+            P/N resume
+        </release>
         <release version="1.0.2" date="2018-06-30">
             P/N removal
         </release>
@@ -51,8 +54,26 @@
                     <compile  define="__HC32L150KX__"/>
                 </device>
                 
+                <device Dname="HC32L150K8">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L150KX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile  define="__HC32L150KX__"/>
+                </device>
+                
                 <device Dname="HC32L150JA">
                     <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L150JX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile  define="__HC32L150JX__"/>
+                </device>
+                
+                <device Dname="HC32L150J8">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L150JX.SFR"/>
                     <compile    header="Device/Include/hc32l15.h"/>
@@ -69,8 +90,26 @@
                     <compile  define="__HC32L150FX__"/>
                 </device>
                 
+                <device Dname="HC32L150F8">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L150FX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile  define="__HC32L150FX__"/>
+                </device>
+                
                 <device Dname="HC32L156KA">
                     <memory  id="IROM1"  start="0x00000000"  size="0x20000"  startup="1"  default="1"/>
+                    <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
+                    <debug svd="SVD/HC32L156KX.SFR"/>
+                    <compile    header="Device/Include/hc32l15.h"/>
+                    <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile  define="__HC32L156KX__"/>
+                </device>
+                
+                <device Dname="HC32L156K8">
+                    <memory  id="IROM1"  start="0x00000000"  size="0x10000"  startup="1"  default="1"/>
                     <memory  id="IRAM1" start="0x20000000"  size="0x1800"  init ="0"  default="1"/>
                     <debug svd="SVD/HC32L156KX.SFR"/>
                     <compile    header="Device/Include/hc32l15.h"/>
@@ -95,7 +134,6 @@
                     <algorithm  name="Flash/HC32L15.FLM" start="0x00000000"  size="0x20000" default="1"/>
                     <compile  define="__HC32L156JX__"/>
                 </device>
-                
             </subFamily>
         </family>
     </devices>
@@ -122,27 +160,27 @@
         <!-- P/N Conditions -->
         <condition id="HC32L150FX">
             <description>HDSC HC32L150FX Device</description>
-            <require Dname="HC32L150FA"/>
+            <require Dname="HC32L150F[A8]"/>
         </condition>
         
         <condition id="HC32L150JX">
             <description>HDSC HC32L150JX Device</description>
-            <require Dname="HC32L150JA"/>
+            <require Dname="HC32L150J[A8]"/>
         </condition>
 
         <condition id="HC32L150KX">
             <description>HDSC HC32L150KX Device</description>
-            <require Dname="HC32L150KA"/>
+            <require Dname="HC32L150K[A8]"/>
         </condition>
 
         <condition id="HC32L156JX">
             <description>HDSC HC32L156JX Device</description>
-            <require Dname="HC32L156JA"/>
+            <require Dname="HC32L156J[A8]"/>
         </condition>
 
         <condition id="HC32L156KX">
             <description>HDSC HC32L156KX Device</description>
-            <require Dname="HC32L156KA"/>
+            <require Dname="HC32L156K[A8]"/>
         </condition>
         
         <!-- Device + CMSIS Conditions -->
