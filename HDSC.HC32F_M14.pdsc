@@ -15,6 +15,11 @@
         <release version="1.0.0" date="2017-10-11">
             Initial Version
         </release>
+        <release version="1.0.1" date="2019-03-20">
+            Update *.FLM
+              add Verify Function
+              increase TIMEOUT definition
+        </release>
     </releases>
 
     <keywords>
