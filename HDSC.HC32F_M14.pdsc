@@ -20,6 +20,9 @@
               add Verify Function
               increase TIMEOUT definition
         </release>
+        <release version="1.0.2" date="2019-07-30">
+            Modify DMAC register description
+        </release>
     </releases>
 
     <keywords>
