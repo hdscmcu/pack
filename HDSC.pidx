@@ -2,10 +2,10 @@
 <index schemaVersion="1.0.0" xs:noNamespaceSchemaLocation="PackIndex.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
   <vendor>HDSC</vendor>
   <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
-  <timestamp>2019-07-30:00:10.7300074+00:00</timestamp>
+  <timestamp>2019-09-16:00:10.7300074+00:00</timestamp>
   <pindex>
-    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L15" version="1.0.3"/>
-    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F_M14" version="1.0.2"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L15" version="1.0.4"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F_M14" version="1.0.3"/>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L110" version="1.0.2"/>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F003" version="1.0.0"/>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F005" version="1.0.0"/>
