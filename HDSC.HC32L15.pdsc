@@ -12,7 +12,7 @@
   </license>
   -->
     <releases>
-        <release version="1.0.4" date="2018-09-06">
+        <release version="1.0.4" date="2019-09-16">
             update flashloader algorithm
         </release>
         <release version="1.0.3" date="2018-09-06">
