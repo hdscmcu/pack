@@ -5,13 +5,16 @@
     <name>HC32F120</name>
     <description>HC32F120 ARM Cortex-M0+ Device Family Pack</description>
     <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
-    <supportContact>support@hdsc.com</supportContact>
+    <supportContact>mcu_eco@hdsc.com.cn</supportContact>
     <!-- optional license file -->
     <!-- 
   <license>
   </license>
   -->
     <releases>
+        <release version="1.0.2" date="2019-11-18">
+            update debug mode and startup_hc32f120.s
+        </release>
         <release version="1.0.1" date="2019-11-12">
             update flashloader algorithm
         </release>

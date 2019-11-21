@@ -5,7 +5,7 @@
     <name>HC32F_M14</name>
     <description>HC32F_M14 ARM Cortex-M0+ Device Family Pack</description>
     <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
-    <supportContact>support@hdsc.com</supportContact>
+    <supportContact>mcu_eco@hdsc.com.cn</supportContact>
     <!-- optional license file -->
     <!-- 
   <license>
