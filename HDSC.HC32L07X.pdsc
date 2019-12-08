@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+    <vendor>HDSC</vendor>
+    <name>HC32L07X</name>
+    <description>HC32L07X ARM Cortex-M0+ Device Family Pack</description>
+    <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
+    <supportContact>support@hdsc.com</supportContact>
+    <!-- optional license file -->
+    
+    <!-- 
+    <license>
+    </license>
+    -->
+
+    <releases>
+        <release version="1.0.0" date="2018-09-10">
+            Initial Version
+        </release>
+    </releases>
+
+    <keywords>
+        <!-- keywords for indexing -->
+        <keyword>HDSC</keyword>
+        <keyword>Device Support</keyword>
+        <keyword>HC32L07X</keyword>
+    </keywords>
+
+  
+    <devices>
+        <family Dfamily="HC32L07X-Series" Dvendor="HDSC:145">
+        <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="48000000" />
+        <debugconfig type="swd" clock="1000000" />
+        <description>
+            The HC32L07X device family contains an ARM Cortex-M0+ processor, running up to 48 MHz with a versatile set of on-chip peripherals.
+        </description>
+        
+        <!-- ************************  Subfamily 'HC32L073'  **************************** -->
+        <subFamily DsubFamily="HC32L073">
+            <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32L073PATA'  ***************************** -->
+                <device Dname="HC32L073PATA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x20000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x4000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L07X_128K.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile header="Device/Include/HC32L073PATA.h"/>
+                    <debug svd="SVD/HC32L073PATA.sfr"/>
+                </device>
+                
+                <!-- *************************  Device 'HC32L073KATA'  ***************************** -->
+                <device Dname="HC32L073KATA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x20000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x4000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L07X_128K.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile header="Device/Include/HC32L073KATA.h"/>
+                    <debug svd="SVD/HC32L073KATA.sfr"/>
+                </device>
+
+                <!-- *************************  Device 'HC32L073JATA'  ***************************** -->
+                <device Dname="HC32L073JATA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x20000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x4000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L07X_128K.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile header="Device/Include/HC32L073JATA.h"/>
+                    <debug svd="SVD/HC32L073JATA.sfr"/>
+                </device>
+                
+        </subFamily>
+        
+        <!-- ************************  Subfamily 'HC32L072'  **************************** -->
+        <subFamily DsubFamily="HC32L072">
+            <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32L072PATA'  ***************************** -->
+                <device Dname="HC32L072PATA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x20000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x4000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L07X_128K.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile header="Device/Include/HC32L072PATA.h"/>
+                    <debug svd="SVD/HC32L072PATA.sfr"/>
+                </device>
+                
+                <!-- *************************  Device 'HC32L072KATA'  ***************************** -->
+                <device Dname="HC32L072KATA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x20000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x4000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L07X_128K.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile header="Device/Include/HC32L072KATA.h"/>
+                    <debug svd="SVD/HC32L072KATA.sfr"/>
+                </device>
+
+                <!-- *************************  Device 'HC32L072JATA'  ***************************** -->
+                <device Dname="HC32L072JATA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x20000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x4000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L07X_128K.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile header="Device/Include/HC32L072JATA.h"/>
+                    <debug svd="SVD/HC32L072JATA.sfr"/>
+                </device>
+                
+        </subFamily>
+        
+        </family>
+    </devices>
+
+  <!-- examples section (optional for all Software Packs)-->
+  <!--
+  <examples>
+  </examples>
+  -->
+  
+  <!-- conditions section (optional for all Software Packs)-->
+    
+    <conditions>
+        <!-- Compiler Conditions -->
+        <condition id="Compiler ARMCC">
+            <require Tcompiler="ARMCC"/>
+        </condition>
+        
+        <!-- Device Conditions -->
+        <condition id="HC32L07X">
+            <description>HDSC HC32L07X Device</description>
+            <require Dvendor="HDSC:145" Dname="HC32L07*"/>
+            <require Cclass="Device" Cgroup="Startup"/>
+        </condition>
+        
+         <!-- P/N Conditions -->
+        <condition id = "HC32L073PATA">
+            <require Dname="HC32L073PATA"/>
+        </condition>
+        <condition id = "HC32L073KATA">
+            <require Dname="HC32L073KATA"/>
+        </condition>
+        <condition id = "HC32L073JATA">
+            <require Dname="HC32L073JATA"/>
+        </condition>
+        <condition id = "HC32L072PATA">
+            <require Dname="HC32L072PATA"/>
+        </condition>
+        <condition id = "HC32L072KATA">
+            <require Dname="HC32L072KATA"/>
+        </condition>
+        <condition id = "HC32L072JATA">
+            <require Dname="HC32L072JATA"/>
+        </condition>
+        
+        <!-- Device + CMSIS Conditions -->
+        <condition id="HC32L07X CMSIS">
+            <description>HDSC HC32L07X Series devices and CMSIS-CORE</description>
+            <require condition="HC32L07X"/>
+            <require Cclass="CMSIS" Cgroup="CORE"/>
+        </condition>        
+    </conditions>
+
+  
+  <!-- component section (optional for all Software Packs)-->
+
+    <components>
+        <!-- Startup HC32L07X -->
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32L07X CMSIS">
+        <description>System Startup for HC32L07X series</description>
+        <files>
+            <!-- include folder -->
+            <file category="include" name="Device/Include/"/>
+            <file category="header" name="Device/Include/HC32L073PATA.h" condition="HC32L073PATA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L073KATA.h" condition="HC32L073KATA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L073JATA.h" condition="HC32L073JATA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L072PATA.h" condition="HC32L072PATA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L072KATA.h" condition="HC32L072KATA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L072JATA.h" condition="HC32L072JATA" attr="config" version="1.0.0"/>
+            
+            <!-- startup file -->
+            <file category="source" name="Device/Source/ARM/startup_hc32l07x.s" attr="config" condition="Compiler ARMCC" version="1.0.0"/>
+            
+            <!-- system file -->
+            <file category="source" name="Device/Source/system_hc32l07x.c" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/system_hc32l07x.h" attr="config" version="1.0.0"/>
+        </files>
+        </component>
+    </components>
+
+</package>

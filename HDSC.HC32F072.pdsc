@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+    <vendor>HDSC</vendor>
+    <name>HC32F072</name>
+    <description>HC32F072 ARM Cortex-M0+ Device Family Pack</description>
+    <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
+    <supportContact>support@hdsc.com</supportContact>
+    <!-- optional license file -->
+    
+    <!-- 
+    <license>
+    </license>
+    -->
+
+    <releases>
+        <release version="1.0.0" date="2018-09-10">
+            Initial Version
+        </release>
+    </releases>
+
+    <keywords>
+        <!-- keywords for indexing -->
+        <keyword>HDSC</keyword>
+        <keyword>Device Support</keyword>
+        <keyword>HC32F072</keyword>
+    </keywords>
+
+  
+    <devices>
+        <family Dfamily="HC32F072-Series" Dvendor="HDSC:145">
+        <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="48000000" />
+        <debugconfig type="swd" clock="1000000" />
+        <description>
+            The HC32F072 device family contains an ARM Cortex-M0+ processor, running up to 48 MHz with a versatile set of on-chip peripherals.
+        </description>
+        
+        <!-- ************************  Subfamily 'HC32F072'  **************************** -->
+        <subFamily DsubFamily="HC32F072">
+            <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32F072PATA'  ***************************** -->
+                <device Dname="HC32F072PATA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x20000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x4000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32F072_128K.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile header="Device/Include/HC32F072PATA.h"/>
+                    <debug svd="SVD/HC32F072PATA.sfr"/>
+                </device>
+                
+                <!-- *************************  Device 'HC32F072KATA'  ***************************** -->
+                <device Dname="HC32F072KATA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x20000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x4000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32F072_128K.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile header="Device/Include/HC32F072KATA.h"/>
+                    <debug svd="SVD/HC32F072KATA.sfr"/>
+                </device>
+
+                <!-- *************************  Device 'HC32F072JATA'  ***************************** -->
+                <device Dname="HC32F072JATA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x20000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x4000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32F072_128K.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile header="Device/Include/HC32F072JATA.h"/>
+                    <debug svd="SVD/HC32F072JATA.sfr"/>
+                </device>
+                
+        </subFamily>
+        
+        </family>
+    </devices>
+
+  <!-- examples section (optional for all Software Packs)-->
+  <!--
+  <examples>
+  </examples>
+  -->
+  
+  <!-- conditions section (optional for all Software Packs)-->
+    
+    <conditions>
+        <!-- Compiler Conditions -->
+        <condition id="Compiler ARMCC">
+            <require Tcompiler="ARMCC"/>
+        </condition>
+        
+        <!-- Device Conditions -->
+        <condition id="HC32F072">
+            <description>HDSC HC32F072 Device</description>
+            <require Dvendor="HDSC:145" Dname="HC32F072*"/>
+            <require Cclass="Device" Cgroup="Startup"/>
+        </condition>
+        
+         <!-- P/N Conditions -->
+        <condition id = "HC32F072PATA">
+            <require Dname="HC32F072PATA"/>
+        </condition>
+        <condition id = "HC32F072KATA">
+            <require Dname="HC32F072KATA"/>
+        </condition>
+        <condition id = "HC32F072JATA">
+            <require Dname="HC32F072JATA"/>
+        </condition>
+        
+        <!-- Device + CMSIS Conditions -->
+        <condition id="HC32F072 CMSIS">
+            <description>HDSC HC32F072 Series devices and CMSIS-CORE</description>
+            <require condition="HC32F072"/>
+            <require Cclass="CMSIS" Cgroup="CORE"/>
+        </condition>        
+    </conditions>
+
+  
+  <!-- component section (optional for all Software Packs)-->
+
+    <components>
+        <!-- Startup HC32F072 -->
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32F072 CMSIS">
+        <description>System Startup for HC32F072 series</description>
+        <files>
+            <!-- include folder -->
+            <file category="include" name="Device/Include/"/>
+            <file category="header" name="Device/Include/HC32F072PATA.h" condition="HC32F072PATA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32F072KATA.h" condition="HC32F072KATA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32F072JATA.h" condition="HC32F072JATA" attr="config" version="1.0.0"/>
+            
+            <!-- startup file -->
+            <file category="source" name="Device/Source/ARM/startup_hc32f072.s" attr="config" condition="Compiler ARMCC" version="1.0.0"/>
+            
+            <!-- system file -->
+            <file category="source" name="Device/Source/system_hc32f072.c" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/system_hc32f072.h" attr="config" version="1.0.0"/>
+        </files>
+        </component>
+    </components>
+
+</package>

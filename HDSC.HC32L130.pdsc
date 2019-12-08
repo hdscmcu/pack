@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+    <vendor>HDSC</vendor>
+    <name>HC32L130</name>
+    <description>HC32L130 ARM Cortex-M0+ Device Family Pack</description>
+    <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
+    <supportContact>support@hdsc.com</supportContact>
+    <!-- optional license file -->
+    
+    <!-- 
+    <license>
+    </license>
+    -->
+
+    <releases>
+        <release version="1.0.0" date="2018-09-10">
+            Initial Version
+        </release>
+    </releases>
+
+    <keywords>
+        <!-- keywords for indexing -->
+        <keyword>HDSC</keyword>
+        <keyword>Device Support</keyword>
+        <keyword>HC32L130</keyword>
+    </keywords>
+
+  
+    <devices>
+        <family Dfamily="HC32L130-Series" Dvendor="HDSC:145">
+        <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="48000000" />
+        <debugconfig type="swd" clock="1000000" />
+        <description>
+            The HC32L130 device family contains an ARM Cortex-M0+ processor, running up to 48 MHz with a versatile set of on-chip peripherals.
+        </description>
+        
+        <!-- ************************  Subfamily 'HC32L130'  **************************** -->
+        <subFamily DsubFamily="HC32L130">
+            <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32L130J8TA'  ***************************** -->
+                <device Dname="HC32L130J8TA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x10000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x2000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L130_64K.FLM" start="0x00000000"  size="0x10000" default="1"/>
+                    <compile header="Device/Include/HC32L130J8TA.h"/>
+                    <debug svd="SVD/HC32L130J8TA.sfr"/>
+                </device>
+                
+                <!-- *************************  Device 'HC32L130F8UA'  ***************************** -->
+                <device Dname="HC32L130F8UA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x10000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x2000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L130_64K.FLM" start="0x00000000"  size="0x10000" default="1"/>
+                    <compile header="Device/Include/HC32L130F8UA.h"/>
+                    <debug svd="SVD/HC32L130F8UA.sfr"/>
+                </device>
+                
+                <!-- *************************  Device 'HC32L130E8PA'  ***************************** -->
+                <device Dname="HC32L130E8PA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x10000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x2000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L130_64K.FLM" start="0x00000000"  size="0x10000" default="1"/>
+                    <compile header="Device/Include/HC32L130E8PA.h"/>
+                    <debug svd="SVD/HC32L130E8PA.sfr"/>
+                </device>
+                
+        </subFamily>
+        </family>
+    </devices>
+
+  <!-- examples section (optional for all Software Packs)-->
+  <!--
+  <examples>
+  </examples>
+  -->
+  
+  <!-- conditions section (optional for all Software Packs)-->
+    
+    <conditions>
+        <!-- Compiler Conditions -->
+        <condition id="Compiler ARMCC">
+            <require Tcompiler="ARMCC"/>
+        </condition>
+        
+        <!-- Device Conditions -->
+        <condition id="HC32L130">
+            <description>HDSC HC32L130 Device</description>
+            <require Dvendor="HDSC:145" Dname="HC32L130*"/>
+            <require Cclass="Device" Cgroup="Startup"/>
+        </condition>
+        
+         <!-- P/N Conditions -->
+        <condition id = "HC32L130J8TA">
+            <require Dname="HC32L130J8TA"/>
+        </condition>
+        <condition id = "HC32L130F8UA">
+            <require Dname="HC32L130F8UA"/>
+        </condition>
+        <condition id = "HC32L130E8PA">
+            <require Dname="HC32L130E8PA"/>
+        </condition>
+
+        <!-- Device + CMSIS Conditions -->
+        <condition id="HC32L130 CMSIS">
+            <description>HDSC HC32L130 Series devices and CMSIS-CORE</description>
+            <require condition="HC32L130"/>
+            <require Cclass="CMSIS" Cgroup="CORE"/>
+        </condition>        
+    </conditions>
+
+  
+  <!-- component section (optional for all Software Packs)-->
+
+    <components>
+        <!-- Startup HC32L130 -->
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32L130 CMSIS">
+        <description>System Startup for HC32L130 series</description>
+        <files>
+            <!-- include folder -->
+            <file category="include" name="Device/Include/"/>
+            <file category="header" name="Device/Include/HC32L130J8TA.h" condition="HC32L130J8TA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L130F8UA.h" condition="HC32L130F8UA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L130E8PA.h" condition="HC32L130E8PA" attr="config" version="1.0.0"/>
+            
+            <!-- startup file -->
+            <file category="source" name="Device/Source/ARM/startup_hc32l130.s" attr="config" condition="Compiler ARMCC" version="1.0.0"/>
+            
+            <!-- system file -->
+            <file category="source" name="Device/Source/system_hc32l130.c" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/system_hc32l130.h" attr="config" version="1.0.0"/>
+        </files>
+        </component>
+    </components>
+
+</package>

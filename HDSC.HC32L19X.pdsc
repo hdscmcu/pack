@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+    <vendor>HDSC</vendor>
+    <name>HC32L19X</name>
+    <description>HC32L19X ARM Cortex-M0+ Device Family Pack</description>
+    <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
+    <supportContact>support@hdsc.com</supportContact>
+    <!-- optional license file -->
+    
+    <!-- 
+    <license>
+    </license>
+    -->
+
+    <releases>
+        <release version="1.0.0" date="2018-09-10">
+            Initial Version
+        </release>
+    </releases>
+
+    <keywords>
+        <!-- keywords for indexing -->
+        <keyword>HDSC</keyword>
+        <keyword>Device Support</keyword>
+        <keyword>HC32L19X</keyword>
+    </keywords>
+
+  
+    <devices>
+        <family Dfamily="HC32L19X-Series" Dvendor="HDSC:145">
+        <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dfpu="0" Dmpu="0" Dendian="Little-endian" Dclock="48000000" />
+        <debugconfig type="swd" clock="1000000" />
+        <description>
+            The HC32L19X device family contains an ARM Cortex-M0+ processor, running up to 48 MHz with a versatile set of on-chip peripherals.
+        </description>
+        
+        <!-- ************************  Subfamily 'HC32L196'  **************************** -->
+        <subFamily DsubFamily="HC32L196">
+            <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32L196PCTA'  ***************************** -->
+                <device Dname="HC32L196PCTA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x40000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x8000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L19X_256K.FLM" start="0x00000000"  size="0x40000" default="1"/>
+                    <compile header="Device/Include/HC32L196PCTA.h"/>
+                    <debug svd="SVD/HC32L196PCTA.sfr"/>
+                </device>
+                
+                <!-- *************************  Device 'HC32L196MCTA'  ***************************** -->
+                <device Dname="HC32L196MCTA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x40000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x8000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L19X_256K.FLM" start="0x00000000"  size="0x40000" default="1"/>
+                    <compile header="Device/Include/HC32L196MCTA.h"/>
+                    <debug svd="SVD/HC32L196MCTA.sfr"/>
+                </device>
+
+                <!-- *************************  Device 'HC32L196KCTA'  ***************************** -->
+                <device Dname="HC32L196KCTA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x40000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x8000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L19X_256K.FLM" start="0x00000000"  size="0x40000" default="1"/>
+                    <compile header="Device/Include/HC32L196KCTA.h"/>
+                    <debug svd="SVD/HC32L196KCTA.sfr"/>
+                </device>
+
+                <!-- *************************  Device 'HC32L196JCTA'  ***************************** -->
+                <device Dname="HC32L196JCTA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x40000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x8000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L19X_256K.FLM" start="0x00000000"  size="0x40000" default="1"/>
+                    <compile header="Device/Include/HC32L196JCTA.h"/>
+                    <debug svd="SVD/HC32L196JCTA.sfr"/>
+                </device>
+                
+        </subFamily>
+        
+        <!-- ************************  Subfamily 'HC32L190'  **************************** -->
+        <subFamily DsubFamily="HC32L190">
+            <processor Dclock="48000000"/>
+                <!-- *************************  Device 'HC32L190JCTA'  ***************************** -->
+                <device Dname="HC32L190JCTA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x40000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x8000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L19X_256K.FLM" start="0x00000000"  size="0x40000" default="1"/>
+                    <compile header="Device/Include/HC32L190JCTA.h"/>
+                    <debug svd="SVD/HC32L190JCTA.sfr"/>
+                </device>
+                
+                <!-- *************************  Device 'HC32L190FCUA'  ***************************** -->
+                <device Dname="HC32L190FCUA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x40000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x8000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L19X_256K.FLM" start="0x00000000"  size="0x40000" default="1"/>
+                    <compile header="Device/Include/HC32L190FCUA.h"/>
+                    <debug svd="SVD/HC32L190FCUA.sfr"/>
+                </device>
+                
+        </subFamily>
+        
+        </family>
+    </devices>
+
+  <!-- examples section (optional for all Software Packs)-->
+  <!--
+  <examples>
+  </examples>
+  -->
+  
+  <!-- conditions section (optional for all Software Packs)-->
+    
+    <conditions>
+        <!-- Compiler Conditions -->
+        <condition id="Compiler ARMCC">
+            <require Tcompiler="ARMCC"/>
+        </condition>
+        
+        <!-- Device Conditions -->
+        <condition id="HC32L19X">
+            <description>HDSC HC32L19X Device</description>
+            <require Dvendor="HDSC:145" Dname="HC32L19*"/>
+            <require Cclass="Device" Cgroup="Startup"/>
+        </condition>
+        
+         <!-- P/N Conditions -->
+        <condition id = "HC32L196PCTA">
+            <require Dname="HC32L196PCTA"/>
+        </condition>
+        <condition id = "HC32L196MCTA">
+            <require Dname="HC32L196MCTA"/>
+        </condition>
+        <condition id = "HC32L196KCTA">
+            <require Dname="HC32L196KCTA"/>
+        </condition>
+        <condition id = "HC32L196JCTA">
+            <require Dname="HC32L196JCTA"/>
+        </condition>
+        <condition id = "HC32L190JCTA">
+            <require Dname="HC32L190JCTA"/>
+        </condition>
+        <condition id = "HC32L190FCUA">
+            <require Dname="HC32L190FCUA"/>
+        </condition>
+        
+        <!-- Device + CMSIS Conditions -->
+        <condition id="HC32L19X CMSIS">
+            <description>HDSC HC32L19X Series devices and CMSIS-CORE</description>
+            <require condition="HC32L19X"/>
+            <require Cclass="CMSIS" Cgroup="CORE"/>
+        </condition>        
+    </conditions>
+
+  
+  <!-- component section (optional for all Software Packs)-->
+
+    <components>
+        <!-- Startup HC32L19X -->
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32L19X CMSIS">
+        <description>System Startup for HC32L19X series</description>
+        <files>
+            <!-- include folder -->
+            <file category="include" name="Device/Include/"/>
+            <file category="header" name="Device/Include/HC32L196PCTA.h" condition="HC32L196PCTA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L196MCTA.h" condition="HC32L196MCTA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L196KCTA.h" condition="HC32L196KCTA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L196JCTA.h" condition="HC32L196JCTA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L190JCTA.h" condition="HC32L190JCTA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L190FCUA.h" condition="HC32L190FCUA" attr="config" version="1.0.0"/>
+            
+            <!-- startup file -->
+            <file category="source" name="Device/Source/ARM/startup_hc32l19x.s" attr="config" condition="Compiler ARMCC" version="1.0.0"/>
+            
+            <!-- system file -->
+            <file category="source" name="Device/Source/system_hc32l19x.c" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/system_hc32l19x.h" attr="config" version="1.0.0"/>
+        </files>
+        </component>
+    </components>
+
+</package>
