@@ -5,15 +5,18 @@
     <name>HC32L110</name>
     <description>HC32L110 ARM Cortex-M0+ Device Family Pack</description>
     <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
-    <supportContact>support@hdsc.com</supportContact>
+    <supportContact>mcu_eco@hdsc.com.cn</supportContact>
     <!-- optional license file -->
     
     <!-- 
     <license>
     </license>
     -->
-  
+
     <releases>
+        <release version="1.0.3" date="2019-12-9">
+            Update supportContact
+        </release>
         <release version="1.0.2" date="2018-06-28">
             Version revise
         </release>    
@@ -155,20 +158,20 @@
 
     <components>
         <!-- Startup HC32L110 -->
-        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32L110 CMSIS">
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.1" condition="HC32L110 CMSIS">
         <description>System Startup for HC32L110 series</description>
         <files>
             <!-- include folder -->
             <file category="include" name="Device/Include/"/>
-            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C6UA" attr="config" version="1.0.0"/>
-            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C6PA" attr="config" version="1.0.0"/>
-            <file category="header" name="Device/Include/HC32L110B.h" condition="HC32L110B6PA" attr="config" version="1.0.0"/>
-            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C4UA" attr="config" version="1.0.0"/>
-            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C4PA" attr="config" version="1.0.0"/>
-            <file category="header" name="Device/Include/HC32L110B.h" condition="HC32L110B4PA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C6UA" attr="config" version="1.0.1"/>
+            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C6PA" attr="config" version="1.0.1"/>
+            <file category="header" name="Device/Include/HC32L110B.h" condition="HC32L110B6PA" attr="config" version="1.0.1"/>
+            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C4UA" attr="config" version="1.0.1"/>
+            <file category="header" name="Device/Include/HC32L110C.h" condition="HC32L110C4PA" attr="config" version="1.0.1"/>
+            <file category="header" name="Device/Include/HC32L110B.h" condition="HC32L110B4PA" attr="config" version="1.0.1"/>
             
             <!-- startup file -->
-            <file category="sourceAsm" name="Device/Source/ARM/startup_hc32l110.s" attr="config" condition="Compiler ARMCC" version="1.0.0"/>
+            <file category="sourceAsm" name="Device/Source/ARM/startup_hc32l110.s" attr="config" condition="Compiler ARMCC" version="1.0.1"/>
             
             <!-- system file -->
             <file category="sourceC" name="Device/Source/main.c" attr="template" select="empty project" version="1.0.0"/>

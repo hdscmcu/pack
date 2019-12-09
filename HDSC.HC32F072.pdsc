@@ -5,7 +5,7 @@
     <name>HC32F072</name>
     <description>HC32F072 ARM Cortex-M0+ Device Family Pack</description>
     <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
-    <supportContact>support@hdsc.com</supportContact>
+    <supportContact>mcu_eco@hdsc.com.cn</supportContact>
     <!-- optional license file -->
     
     <!-- 
@@ -14,6 +14,9 @@
     -->
 
     <releases>
+        <release version="1.0.1" date="2019-12-9">
+            Update supportContact
+        </release>
         <release version="1.0.0" date="2018-09-10">
             Initial Version
         </release>

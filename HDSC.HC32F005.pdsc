@@ -12,8 +12,11 @@
     <license>
     </license>
     -->
-  
+
     <releases>
+        <release version="1.0.1" date="2019-12-9">
+            Update supportContact
+        </release>	
         <release version="1.0.0" date="2018-02-01">
             Initial Version
         </release>
@@ -102,16 +105,16 @@
 
     <components>
         <!-- Startup HC32F005 -->
-        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32F005 CMSIS">
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.1" condition="HC32F005 CMSIS">
         <description>System Startup for HC32F005 series</description>
         <files>
             <!-- include folder -->
             <file category="include" name="Device/Include/"/>
-            <file category="header" name="Device/Include/HC32F005.h" condition="HC32F005C6UA" attr="config" version="1.0.0"/>
-            <file category="header" name="Device/Include/HC32F005.h" condition="HC32F005C6PA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32F005.h" condition="HC32F005C6UA" attr="config" version="1.0.1"/>
+            <file category="header" name="Device/Include/HC32F005.h" condition="HC32F005C6PA" attr="config" version="1.0.1"/>
             
             <!-- startup file -->
-            <file category="sourceAsm" name="Device/Source/ARM/startup_hc32f005.s" attr="config" condition="Compiler ARMCC" version="1.0.0"/>
+            <file category="sourceAsm" name="Device/Source/ARM/startup_hc32f005.s" attr="config" condition="Compiler ARMCC" version="1.0.1"/>
             
             <!-- system file -->
             <file category="sourceC" name="Device/Source/main.c" attr="template" select="empty project" version="1.0.0"/>
