@@ -6,10 +6,19 @@
   <pindex>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L15" version="1.0.4"/>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F_M14" version="1.0.3"/>
-    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L110" version="1.0.2"/>
-    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F003" version="1.0.0"/>
-    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F005" version="1.0.0"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L110" version="1.0.3"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F003" version="1.0.1"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F005" version="1.0.1"/>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F120" version="1.0.2"/>
     <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32M120" version="1.0.2"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F17X" version="1.0.1"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F19X" version="1.0.1"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F030" version="1.0.1"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32F072" version="1.0.1"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L07X" version="1.0.1"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L17X" version="1.0.1"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L19X" version="1.0.1"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L130" version="1.0.1"/>
+    <pdsc url="https://raw.githubusercontent.com/hdscmcu/pack/master/" vendor="HDSC" name="HC32L136" version="1.0.1"/>
   </pindex>
 </index>
