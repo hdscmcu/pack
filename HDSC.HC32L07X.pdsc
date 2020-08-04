@@ -14,7 +14,10 @@
     -->
 
     <releases>
-        <release version="1.0.1" date="2019-12-09">
+        <release version="1.1.0" date="2020-08-4">
+            Add device HC32L072FAUA
+        </release>
+        <release version="1.0.1" date="2019-12-9">
             Update supportContact
         </release>
         <release version="1.0.0" date="2018-09-10">
@@ -99,6 +102,15 @@
                     <compile header="Device/Include/HC32L072JATA.h"/>
                     <debug svd="SVD/HC32L072JATA.sfr"/>
                 </device>
+
+                <!-- *************************  Device 'HC32L072FAUA'  ***************************** -->
+                <device Dname="HC32L072FAUA">
+                    <memory        id="IROM1"                start="0x00000000"    size="0x20000"    startup="1"    default="1"/>
+                    <memory        id="IRAM1"                start="0x20000000"    size="0x4000"    init="0"    default="1"/>
+                    <algorithm  name="Flash/FlashHC32L07X_128K.FLM" start="0x00000000"  size="0x20000" default="1"/>
+                    <compile header="Device/Include/HC32L072FAUA.h"/>
+                    <debug svd="SVD/HC32L072FAUA.sfr"/>
+                </device>
                 
         </subFamily>
         
@@ -145,6 +157,9 @@
         <condition id = "HC32L072JATA">
             <require Dname="HC32L072JATA"/>
         </condition>
+        <condition id = "HC32L072FAUA">
+            <require Dname="HC32L072FAUA"/>
+        </condition>
         
         <!-- Device + CMSIS Conditions -->
         <condition id="HC32L07X CMSIS">
@@ -170,6 +185,7 @@
             <file category="header" name="Device/Include/HC32L072PATA.h" condition="HC32L072PATA" attr="config" version="1.0.0"/>
             <file category="header" name="Device/Include/HC32L072KATA.h" condition="HC32L072KATA" attr="config" version="1.0.0"/>
             <file category="header" name="Device/Include/HC32L072JATA.h" condition="HC32L072JATA" attr="config" version="1.0.0"/>
+            <file category="header" name="Device/Include/HC32L072FAUA.h" condition="HC32L072FAUA" attr="config" version="1.0.0"/>
             
             <!-- startup file -->
             <file category="source" name="Device/Source/ARM/startup_hc32l07x.s" attr="config" condition="Compiler ARMCC" version="1.0.0"/>
