@@ -17,5 +17,13 @@
 * HC32F17X series
 * HC32L07X series
 * HC32F072 series
+* HC32F460 series
+* HC32F451 series
+* HC32F452 series
+* HC32F472 series
+* HC32F448 series
+* HC32F334 series
+* HC32F4A0 series
+* HC32F115 series
 
 ### Copyright @HuaDa Semiconductor Co., Ltd.
