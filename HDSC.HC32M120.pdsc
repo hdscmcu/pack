@@ -5,13 +5,43 @@
     <name>HC32M120</name>
     <description>HC32M120 ARM Cortex-M0+ Device Family Pack</description>
     <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
-    <supportContact>mcu_eco@hdsc.com.cn</supportContact>
+    <supportContact>mcu_eco@xhsc.com.cn</supportContact>
     <!-- optional license file -->
-    <!-- 
+    <!--
   <license>
   </license>
   -->
     <releases>
+        <release version="1.0.10" date = "2023-09-30">
+            1.Modify headfile and register file based on reference manual Rev1.12
+            2.update svd schemaVersion
+            3.rename svd files
+        </release>
+        <release version="1.0.9" date = "2023-01-15">
+            1.Modify headfile and register file based on reference manual Rev1.11
+            2.update svd schemaVersion
+            3.rename svd files
+        </release>
+        <release version="1.0.8" date="2022-03-31">
+            1.rename svd files and flash files
+            2.update board info
+        </release>
+        <release version="1.0.7" date="2021-01-06">
+            update headfile
+        </release>
+        <release version="1.0.6" date="2021-01-06">
+            update empty project
+        </release>
+        <release version="1.0.5" date="2020-12-03">
+            1.update startup_hc32m120.s file
+            2.update headfile
+        </release>
+        <release version="1.0.4" date="2020-08-28">
+            update headfile
+        </release>
+        <release version="1.0.3" date="2020-07-30">
+            update flashloader algorithm for Chip erase
+        </release>
         <release version="1.0.2" date="2019-11-18">
             update examples and support contact
         </release>
@@ -37,7 +67,7 @@
             <description>
                 The HC32M120 device family contains an ARM Cortex-M0+ processor, running up to 48 MHz with a versatile set of on-chip peripherals.
             </description>
-            
+
             <environment name="iar">
                 <compile    define="ewarm"/><!-- needed for driver library -->
             </environment>
@@ -45,14 +75,13 @@
             <!-- ************************  Subfamily 'HC32M120'  **************************** -->
             <subFamily DsubFamily="HC32M120">
                 <processor Dclock="48000000"/>
-                    <!-- *************************  Device 'HC32M120F8TA'  ***************************** -->
+                    <!-- *************************  Device 'HC32M120J6TB'  ***************************** -->
                     <device Dname="HC32M120J6TB">
                         <memory    id="IROM1"                   start="0x00000000" size="0x8000" startup="1" default="1"/>
                         <memory    id="IRAM1"                   start="0x20000000" size="0x1000" init   ="0" default="1"/>
-                        <algorithm  name="FlashARM/HC32M120.FLM" start="0x00000000"  size="0x10000" default="1"/>
-                        <algorithm  name="FlashIAR/FlashHC32M120.flash" start="0x00000000"  size="0x10000" default="0" style="IAR"/>
+                        <algorithm  name="FlashARM/HC32M120.FLM" start="0x00000000"  size="0x8000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32M120x6.flash" start="0x00000000"  size="0x8000" default="0" style="IAR"/>
                         <compile header="Device/Include/HC32M120J6TB.h"/>
-                        <debug svd="SVD/HC32M120J6TB.SFR"/>
                         <debug svd="SVD/HC32M120J6TB.svd"/>
                         <environment name="iar">
                           <debugger>
@@ -60,15 +89,14 @@
                           </debugger>
                         </environment>
                     </device>
-            
-                    <!-- *************************  Device 'HC32M120F6TA'  ***************************** -->
+
+                    <!-- *************************  Device 'HC32M120F6TB'  ***************************** -->
                     <device Dname="HC32M120F6TB">
                         <memory    id="IROM1"                   start="0x00000000" size="0x8000" startup="1" default="1"/>
                         <memory    id="IRAM1"                   start="0x20000000" size="0x1000" init   ="0" default="1"/>
-                        <algorithm  name="FlashARM/HC32M120.FLM" start="0x00000000"  size="0x10000" default="1"/>
-                        <algorithm  name="FlashIAR/FlashHC32M120.flash" start="0x00000000"  size="0x10000" default="1" style="IAR"/>
+                        <algorithm  name="FlashARM/HC32M120.FLM" start="0x00000000"  size="0x8000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32M120x6.flash" start="0x00000000"  size="0x8000" default="1" style="IAR"/>
                         <compile header="Device/Include/HC32M120F6TB.h"/>
-                        <debug svd="SVD/HC32M120F6TB.SFR"/>
                         <debug svd="SVD/HC32M120F6TB.svd"/>
                         <environment name="iar">
                           <debugger>
@@ -76,7 +104,7 @@
                           </debugger>
                         </environment>
                     </device>
-                    
+
             </subFamily>
         </family>
     </devices>
@@ -98,7 +126,7 @@
             <require Dvendor="HDSC:145" Dname="HC32M120*"/>
             <require Cclass="Device" Cgroup="Startup"/>
         </condition>
-        
+
         <!-- P/N Conditions -->
         <condition id = "HC32M120J6TB">
             <require Dname="HC32M120J6TB"/>
@@ -122,9 +150,9 @@
             <!-- the following content goes into file 'RTE_Components.h' -->
             <!--#define RTE_DEVICE_STARTUP_HC32M120    /* Device Startup for HC32M120 */-->
             </RTE_Components_h>
-      
+
             <files>
-                <!-- include folder -->  
+                <!-- include folder -->
                 <file category="include" name="Device/Include/"/>
                 <file category="header" name="Device/Include/HC32M120.h"/>
                 <file category="header" name="Device/Include/HC32M120J6TB.h" condition="HC32M120J6TB" attr="config" version="1.0.0"/>
@@ -140,10 +168,10 @@
             </files>
         </component>
     </components>
-    
+
     <boards>
-        <board vendor="HDSC" name="STK_HC32M120_LQFP48_050_V11">
-            <description>HC32M120 44-Pin Target board</description>
+        <board vendor="HDSC" name="SK_M120_LQ48_Rev2.0">
+            <description>HC32M120 48-Pin Target board</description>
             <mountedDevice    deviceIndex="0" Dvendor="HDSC:145" Dname="HC32M120J6TB"/>
             <compatibleDevice deviceIndex="0" Dvendor="HDSC:145" Dfamily="HC32M120-Series" DsubFamily="HC32M120"/>
             <debugInterface adapter="JTAG/SW" connector="10-pin Cortex Debug Connector (0.05 inch connector)"/>
@@ -154,7 +182,7 @@
     <examples>
         <example name="EmptyMain" folder="Examples/EmptyMain" doc="Abstract.txt" version="1.0.0">
         <description>This is a basic example providing an empty main body</description>
-        <board name="STK_HC32M120_LQFP48_050_V11" vendor="HDSC"/>
+        <board name="SK_M120_LQ48_Rev2.0" vendor="HDSC"/>
         <project>
             <environment name="uv"  load="ARM/EmptyMain.uvprojx"/>
             <environment name="iar" load="IAR/EmptyMain/EmptyMain.ewp" />
@@ -164,7 +192,7 @@
             <component Cclass="Device" Cgroup="Startup"/>
             <keyword>Empty</keyword>
             <keyword>Main</keyword>
-            <keyword>Getting Started</keyword> 
+            <keyword>Getting Started</keyword>
         </attributes>
         </example>
     </examples>

@@ -5,18 +5,40 @@
     <name>HC32F120</name>
     <description>HC32F120 ARM Cortex-M0+ Device Family Pack</description>
     <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
-    <supportContact>mcu_eco@hdsc.com.cn</supportContact>
+    <supportContact>mcu_eco@xhsc.com.cn</supportContact>
     <!-- optional license file -->
-    <!-- 
+    <!--
   <license>
   </license>
   -->
     <releases>
+        <release version="1.0.8" date = "2023-09-30">
+            1.Modify headfile and register file based on reference manual Rev1.21
+        </release>
+        <release version="1.0.7" date = "2023-01-15">
+            1.Modify headfile and register file based on reference manual Rev1.11
+            2.update svd schemaVersion
+            3.rename svd files
+        </release>
+        <release version="1.0.6" date = "2022-03-31">
+            1.use different flash files for 64K and 128K chip
+            2.update board info
+        </release>
+        <release version="1.0.5" date="2021-10-18">
+            1.Modify headfile and register file based on UM Rev1.11
+        </release>
+        <release version="1.0.4" date="2020-12-30">
+            1.Add HC32F120_32K.FLM
+        </release>
+        <release version="1.0.3" date="2020-10-27">
+            1.Update debug mode and startup_hc32f120.s
+            2.Modify EE1 to EEI in headfile
+        </release>
         <release version="1.0.2" date="2019-11-18">
-            update debug mode and startup_hc32f120.s
+            Update debug mode and startup_hc32f120.s
         </release>
         <release version="1.0.1" date="2019-11-12">
-            update flashloader algorithm
+            Update flashloader algorithm
         </release>
         <release version="1.0.0" date="2019-07-02">
             Initial Version
@@ -37,7 +59,7 @@
             <description>
                 The HC32F120 device family contains an ARM Cortex-M0+ processor, running up to 48 MHz with a versatile set of on-chip peripherals.
             </description>
-            
+
             <environment name="iar">
                 <compile    define="ewarm"/><!-- needed for driver library -->
             </environment>
@@ -49,8 +71,8 @@
                     <device Dname="HC32F120F8TA">
                         <memory    id="IROM1"                   start="0x00000000" size="0x10000" startup="1" default="1"/>
                         <memory    id="IRAM1"                   start="0x20000000" size="0x1000" init   ="0" default="1"/>
-                        <algorithm  name="FlashARM/HC32F120.FLM" start="0x00000000"  size="0x10000" default="1"/>
-                        <algorithm  name="FlashIAR/FlashHC32F120.flash" start="0x00000000"  size="0x10000" default="0" style="IAR"/>
+                        <algorithm  name="FlashARM/HC32F120_64K.FLM" start="0x00000000"  size="0x10000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F120x8.flash" start="0x00000000"  size="0x10000" default="0" style="IAR"/>
                         <compile header="Device/Include/HC32F120F8TA.h"/>
                         <!--  <debug svd="SVD/HC32F120F8TA.SFR"/>-->
                         <debug svd="SVD/HC32F120F8TA.svd"/>
@@ -60,13 +82,13 @@
                           </debugger>
                         </environment>
                     </device>
-            
+
                     <!-- *************************  Device 'HC32F120F6TA'  ***************************** -->
                     <device Dname="HC32F120F6TA">
-                        <memory    id="IROM1"                   start="0x00000000" size="0x10000" startup="1" default="1"/>
+                        <memory    id="IROM1"                   start="0x00000000" size="0x8000" startup="1" default="1"/>
                         <memory    id="IRAM1"                   start="0x20000000" size="0x1000" init   ="0" default="1"/>
-                        <algorithm  name="FlashARM/HC32F120.FLM" start="0x00000000"  size="0x10000" default="1"/>
-                        <algorithm  name="FlashIAR/FlashHC32F120.flash" start="0x00000000"  size="0x10000" default="1" style="IAR"/>
+                        <algorithm  name="FlashARM/HC32F120_32K.FLM" start="0x00000000"  size="0x8000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F120x6.flash" start="0x00000000"  size="0x8000" default="1" style="IAR"/>
                         <compile header="Device/Include/HC32F120F6TA.h"/>
                         <!-- <debug svd="SVD/HC32F120F6TA.SFR"/> -->
                         <debug svd="SVD/HC32F120F6TA.svd"/>
@@ -76,13 +98,13 @@
                           </debugger>
                         </environment>
                     </device>
-                    
-                    <!-- *************************  Device 'HC32F120H8TA'  ***************************** -->  
+
+                    <!-- *************************  Device 'HC32F120H8TA'  ***************************** -->
                     <device Dname="HC32F120H8TA">
                         <memory    id="IROM1"                   start="0x00000000" size="0x10000" startup="1" default="1"/>
                         <memory    id="IRAM1"                   start="0x20000000" size="0x1000" init   ="0" default="1"/>
-                        <algorithm  name="FlashARM/HC32F120.FLM" start="0x00000000"  size="0x10000" default="1"/>
-                        <algorithm  name="FlashIAR/FlashHC32F120.flash" start="0x00000000"  size="0x10000" default="1" style="IAR"/>
+                        <algorithm  name="FlashARM/HC32F120_64K.FLM" start="0x00000000"  size="0x10000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F120x8.flash" start="0x00000000"  size="0x10000" default="1" style="IAR"/>
                         <compile header="Device/Include/HC32F120H8TA.h"/>
                         <!-- <debug svd="SVD/HC32F120H8TA.SFR"/> -->
                         <debug svd="SVD/HC32F120H8TA.svd"/>
@@ -92,13 +114,13 @@
                           </debugger>
                         </environment>
                     </device>
-                    
+
                     <!-- *************************  Device 'HC32F120H6TA'  ***************************** -->
                     <device Dname="HC32F120H6TA">
-                        <memory    id="IROM1"                   start="0x00000000" size="0x10000" startup="1" default="1"/>
+                        <memory    id="IROM1"                   start="0x00000000" size="0x8000" startup="1" default="1"/>
                         <memory    id="IRAM1"                   start="0x20000000" size="0x1000" init   ="0" default="1"/>
-                        <algorithm  name="FlashARM/HC32F120.FLM" start="0x00000000"  size="0x10000" default="1"/>
-                        <algorithm  name="FlashIAR/FlashHC32F120.flash" start="0x00000000"  size="0x10000" default="1" style="IAR"/>
+                        <algorithm  name="FlashARM/HC32F120_32K.FLM" start="0x00000000"  size="0x8000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F120x6.flash" start="0x00000000"  size="0x8000" default="1" style="IAR"/>
                         <compile header="Device/Include/HC32F120H6TA.h"/>
                         <!-- <debug svd="SVD/HC32F120H6TA.SFR"/> -->
                         <debug svd="SVD/HC32F120H6TA.svd"/>
@@ -129,7 +151,7 @@
             <require Dvendor="HDSC:145" Dname="HC32F120*"/>
             <require Cclass="Device" Cgroup="Startup"/>
         </condition>
-        
+
         <!-- P/N Conditions -->
         <condition id = "HC32F120F8TA">
             <require Dname="HC32F120F8TA"/>
@@ -159,9 +181,9 @@
             <!-- the following content goes into file 'RTE_Components.h' -->
             <!--#define RTE_DEVICE_STARTUP_HC32F120    /* Device Startup for HC32F120 */-->
             </RTE_Components_h>
-      
+
             <files>
-                <!-- include folder -->  
+                <!-- include folder -->
                 <file category="include" name="Device/Include/"/>
                 <file category="header" name="Device/Include/HC32F120.h"/>
                 <file category="header" name="Device/Include/HC32F120F8TA.h" condition="HC32F120F8TA" attr="config" version="1.0.0"/>
@@ -179,9 +201,9 @@
             </files>
         </component>
     </components>
-    
+
     <boards>
-        <board vendor="HDSC" name="STK_HC32F120_LQFP44_080_V10">
+        <board vendor="HDSC" name="SK_F120_LQ44_Rev2.0">
             <description>HC32F120 44-Pin Target board</description>
             <mountedDevice    deviceIndex="0" Dvendor="HDSC:145" Dname="HC32F120H8TA"/>
             <compatibleDevice deviceIndex="0" Dvendor="HDSC:145" Dfamily="HC32F120-Series" DsubFamily="HC32F120"/>
@@ -193,7 +215,7 @@
     <examples>
         <example name="EmptyMain" folder="Examples/EmptyMain" doc="Abstract.txt" version="1.0.0">
         <description>This is a basic example providing an empty main body</description>
-        <board name="STK_HC32F120_LQFP44_080_V10" vendor="HDSC"/>
+        <board name="SK_F120_LQ44_Rev2.0" vendor="HDSC"/>
         <project>
             <environment name="uv"  load="ARM/EmptyMain.uvprojx"/>
             <environment name="iar" load="IAR/EmptyMain/EmptyMain.ewp" />
@@ -203,7 +225,7 @@
             <component Cclass="Device" Cgroup="Startup"/>
             <keyword>Empty</keyword>
             <keyword>Main</keyword>
-            <keyword>Getting Started</keyword> 
+            <keyword>Getting Started</keyword>
         </attributes>
         </example>
     </examples>

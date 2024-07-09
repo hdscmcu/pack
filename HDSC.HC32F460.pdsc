@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+    <vendor>HDSC</vendor>
+    <name>HC32F460</name>
+    <description>HC32F460 ARM Cortex-M4 Device Family Pack</description>
+    <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
+    <supportContact>mcu_eco@xhsc.com.cn</supportContact>
+    <!-- optional license file -->
+    <!--
+  <license>
+  </license>
+  -->
+    <releases>
+      <release version="1.0.11" date = "2023-09-30">
+          1.Modify headfile and register file based on reference manual Rev1.6
+          2.Modify icf file for adding otp region
+          3.Modify sector for RAMCODE
+        </release>
+      <release version="1.0.10" date = "2023-01-15">
+          1.Modify headfile and register file based on reference manual Rev1.5
+          2.update svd schemaVersion
+          3.rename svd files
+      </release>
+      <release version="1.0.9" date = "2022-03-31">
+        1.use different flash files for 256K and 512K chip
+        2.update board info
+      </release>
+      <release version="1.0.8" date = "2021-10-12">
+        Modify headfile and register file based on user manual Rev1.21
+      </release>
+      <release version="1.0.7" date = "2021-03-11">
+        1.Add new models:hc32f460jcta, hc32f460kcta, hc32f460pctb
+        2.Replace license
+      </release>
+      <release version="1.0.6" date = "2020-12-15">
+        Modify MDK template project
+      </release>
+      <release version="1.0.5" date = "2020-09-15">
+        Update flash algorithm
+      </release>
+      <release version="1.0.4" date = "2020-08-28">
+        Update headfile
+      </release>
+      <release version="1.0.3" date = "2020-07-29">
+        Update IAR pack support
+      </release>
+      <release version="1.0.2" date = "2019-11-20">
+        Update support contact
+      </release>
+      <release version="1.0.1" date = "2019-06-5">
+        Update ram information.
+      </release>
+      <release version="1.0.0" date = "2019-01-16">
+        Initial Version
+      </release>
+    </releases>
+
+    <keywords>
+        <!-- keywords for indexing -->
+        <keyword>HDSC</keyword>
+        <keyword>Device Support</keyword>
+        <keyword>HC32F460</keyword>
+    </keywords>
+
+    <devices>
+        <family Dfamily="HC32F460-Series" Dvendor="HDSC:145">
+            <processor Dcore="Cortex-M4" DcoreVersion="r0p1" Dfpu="1" Dmpu="1" Dendian="Little-endian" Dclock="200000000" />
+            <debugconfig type="swd" clock="1000000" />
+            <description>
+                The HC32F460 device family contains an ARM Cortex-M4 processor, running up to 200 MHz with a versatile set of on-chip peripherals.
+            </description>
+
+            <environment name="iar">
+                <compile    define="ewarm"/><!-- needed for driver library -->
+            </environment>
+
+            <!-- ************************  Subfamily 'HC32F460'  **************************** -->
+            <subFamily DsubFamily="HC32F460">
+                <processor Dclock="200000000"/>
+                    <!-- *************************  Device 'HC32F460JETA'  ***************************** -->
+                    <device Dname="HC32F460JETA">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x80000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000C00" size="0x003FC" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFF8000" size="0x2F000" init   ="0" default="1"/>
+                        <memory    id="IRAM2"                   start="0x200F0000" size="0x1000"  init   ="0" default="0"/>
+                        <algorithm  name="FlashARM/HC32F460_512K.FLM" start="0x00000000"  size="0x80000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F460_otp.FLM" start="0x03000C00"  size="0x3FC" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460xE.flash" start="0x00000000"  size="0x80000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460_otp.flash" start="0x03000C00"  size="0x3FC" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F460JETA.h"/>
+                        <debug svd="SVD/HC32F460JETA.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F460"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F460JEUA'  ***************************** -->
+                    <device Dname="HC32F460JEUA">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x80000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000C00" size="0x003FC" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFF8000" size="0x2F000" init   ="0" default="1"/>
+                        <memory    id="IRAM2"                   start="0x200F0000" size="0x1000"  init   ="0" default="0"/>
+                        <algorithm  name="FlashARM/HC32F460_512K.FLM" start="0x00000000"  size="0x80000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F460_otp.FLM" start="0x03000C00"  size="0x3FC" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460xE.flash" start="0x00000000"  size="0x80000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460_otp.flash" start="0x03000C00"  size="0x3FC" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F460JEUA.h"/>
+                        <debug svd="SVD/HC32F460JEUA.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F460"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F460KEUA'  ***************************** -->
+                    <device Dname="HC32F460KEUA">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x80000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000C00" size="0x003FC" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFF8000" size="0x2F000" init   ="0" default="1"/>
+                        <memory    id="IRAM2"                   start="0x200F0000" size="0x1000"  init   ="0" default="0"/>
+                        <algorithm  name="FlashARM/HC32F460_512K.FLM" start="0x00000000"  size="0x80000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F460_otp.FLM" start="0x03000C00"  size="0x3FC" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460xE.flash" start="0x00000000"  size="0x80000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460_otp.flash" start="0x03000C00"  size="0x3FC" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F460KEUA.h"/>
+                        <debug svd="SVD/HC32F460KEUA.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F460"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F460KETA'  ***************************** -->
+                    <device Dname="HC32F460KETA">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x80000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000C00" size="0x003FC" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFF8000" size="0x2F000" init   ="0" default="1"/>
+                        <memory    id="IRAM2"                   start="0x200F0000" size="0x1000"  init   ="0" default="0"/>
+                        <algorithm  name="FlashARM/HC32F460_512K.FLM" start="0x00000000"  size="0x80000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F460_otp.FLM" start="0x03000C00"  size="0x3FC" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460xE.flash" start="0x00000000"  size="0x80000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460_otp.flash" start="0x03000C00"  size="0x3FC" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F460KETA.h"/>
+                        <debug svd="SVD/HC32F460KETA.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F460"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F460PETB'  ***************************** -->
+                    <device Dname="HC32F460PETB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x80000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000C00" size="0x003FC" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFF8000" size="0x2F000" init   ="0" default="1"/>
+                        <memory    id="IRAM2"                   start="0x200F0000" size="0x1000"  init   ="0" default="0"/>
+                        <algorithm  name="FlashARM/HC32F460_512K.FLM" start="0x00000000"  size="0x80000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F460_otp.FLM" start="0x03000C00"  size="0x3FC" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460xE.flash" start="0x00000000"  size="0x80000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460_otp.flash" start="0x03000C00"  size="0x3FC" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F460PETB.h"/>
+                        <debug svd="SVD/HC32F460PETB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F460"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F460PEHB'  ***************************** -->
+                    <device Dname="HC32F460PEHB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x80000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000C00" size="0x003FC" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFF8000" size="0x2F000" init   ="0" default="1"/>
+                        <memory    id="IRAM2"                   start="0x200F0000" size="0x1000"  init   ="0" default="0"/>
+                        <algorithm  name="FlashARM/HC32F460_512K.FLM" start="0x00000000"  size="0x80000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F460_otp.FLM" start="0x03000C00"  size="0x3FC" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460xE.flash" start="0x00000000"  size="0x80000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460_otp.flash" start="0x03000C00"  size="0x3FC" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F460PEHB.h"/>
+                        <debug svd="SVD/HC32F460PEHB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F460"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F460JCTA'  ***************************** -->
+                    <device Dname="HC32F460JCTA">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x40000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000C00" size="0x003FC" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFF8000" size="0x2F000" init   ="0" default="1"/>
+                        <memory    id="IRAM2"                   start="0x200F0000" size="0x1000"  init   ="0" default="0"/>
+                        <algorithm  name="FlashARM/HC32F460_256K.FLM" start="0x00000000"  size="0x40000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F460_otp.FLM" start="0x03000C00"  size="0x3FC" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460xC.flash" start="0x00000000"  size="0x40000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460_otp.flash" start="0x03000C00"  size="0x3FC" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F460JCTA.h"/>
+                        <debug svd="SVD/HC32F460JCTA.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F460"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F460KCTA'  ***************************** -->
+                    <device Dname="HC32F460KCTA">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x40000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000C00" size="0x003FC" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFF8000" size="0x2F000" init   ="0" default="1"/>
+                        <memory    id="IRAM2"                   start="0x200F0000" size="0x1000"  init   ="0" default="0"/>
+                        <algorithm  name="FlashARM/HC32F460_256K.FLM" start="0x00000000"  size="0x40000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F460_otp.FLM" start="0x03000C00"  size="0x3FC" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460xC.flash" start="0x00000000"  size="0x40000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460_otp.flash" start="0x03000C00"  size="0x3FC" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F460KCTA.h"/>
+                        <debug svd="SVD/HC32F460KCTA.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F460"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F460KCTA'  ***************************** -->
+                    <device Dname="HC32F460PCTB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x40000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000C00" size="0x003FC" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFF8000" size="0x2F000" init   ="0" default="1"/>
+                        <memory    id="IRAM2"                   start="0x200F0000" size="0x1000"  init   ="0" default="0"/>
+                        <algorithm  name="FlashARM/HC32F460_256K.FLM" start="0x00000000"  size="0x40000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F460_otp.FLM" start="0x03000C00"  size="0x3FC" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460xC.flash" start="0x00000000"  size="0x40000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F460_otp.flash" start="0x03000C00"  size="0x3FC" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F460PCTB.h"/>
+                        <debug svd="SVD/HC32F460PCTB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F460"/>
+                          </debugger>
+                        </environment>
+                    </device>
+            </subFamily>
+        </family>
+    </devices>
+
+    <conditions>
+        <!-- Compiler Conditions -->
+        <condition id="Compiler ARM">
+            <description>Startup assembler file for ARMCC</description>
+            <require Tcompiler="ARMCC"/>
+        </condition>
+        <condition id="Compiler IAR">
+            <description>Startup assembler file for IAR</description>
+            <require Tcompiler="IAR"/>
+        </condition>
+
+        <!-- Device Conditions -->
+        <condition id="HC32F460">
+            <description>HDSC HC32F460 Device</description>
+            <require Dvendor="HDSC:145" Dname="HC32F46*"/>
+            <require Cclass="Device" Cgroup="Startup"/>
+        </condition>
+
+        <!-- P/N Conditions -->
+        <condition id = "HC32F460JEUA">
+            <require Dname="HC32F460JEUA"/>
+        </condition>
+        <condition id = "HC32F460JETA">
+            <require Dname="HC32F460JETA"/>
+        </condition>
+        <condition id = "HC32F460KETA">
+            <require Dname="HC32F460KETA"/>
+        </condition>
+        <condition id = "HC32F460KEUA">
+            <require Dname="HC32F460KEUA"/>
+        </condition>
+        <condition id = "HC32F460PEHB">
+            <require Dname="HC32F460PEHB"/>
+        </condition>
+        <condition id = "HC32F460PETB">
+            <require Dname="HC32F460PETB"/>
+        </condition>
+        <condition id = "HC32F460JCTA">
+            <require Dname="HC32F460JCTA"/>
+        </condition>
+        <condition id = "HC32F460KCTA">
+            <require Dname="HC32F460KCTA"/>
+        </condition>
+        <condition id = "HC32F460PCTB">
+            <require Dname="HC32F460PCTB"/>
+        </condition>
+        <!-- Device + CMSIS Conditions -->
+        <condition id="HC32F460 CMSIS">
+            <description>HDSC HC32F460 Series devices and CMSIS-CORE</description>
+            <require condition="HC32F460"/>
+            <require Cclass="CMSIS" Cgroup="CORE"/>
+        </condition>
+    </conditions>
+
+    <components>
+    <!-- Startup HC32F460 -->
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32F460 CMSIS">
+            <description>System Startup for HC32F460 series</description>
+            <RTE_Components_h>
+            <!-- the following content goes into file 'RTE_Components.h' -->
+            <!--#define RTE_DEVICE_STARTUP_HC32F4A0    /* Device Startup for HC32F4A0 */-->
+            </RTE_Components_h>
+
+            <files>
+                <!-- include folder -->
+                <file category="include" name="Device/Include/"/>
+                <file category="header" name="Device/Include/HC32F460.h"/>
+                <file category="header" name="Device/Include/HC32F460JETA.h" condition="HC32F460JETA" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F460JEUA.h" condition="HC32F460JEUA" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F460KETA.h" condition="HC32F460KETA" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F460KEUA.h" condition="HC32F460KEUA" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F460PETB.h" condition="HC32F460PETB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F460PEHB.h" condition="HC32F460PEHB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F460JCTA.h" condition="HC32F460JCTA" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F460KCTA.h" condition="HC32F460KCTA" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F460PCTB.h" condition="HC32F460PCTB" attr="config" version="1.0.0"/>
+                <!-- startup file -->
+                <file category="source" name="Device/Source/ARM/startup_hc32f460.s" attr="config" version="1.0.0" condition="Compiler ARM"/>
+                <file category="source" name="Device/Source/IAR/startup_hc32f460.s" attr="config" version="1.0.0" condition="Compiler IAR"/>
+                <!-- system file -->
+                <file category="source" name="Device/Source/system_hc32f460.c"  attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/system_hc32f460.h" attr="config" version="1.0.0"/>
+                <!-- example file -->
+                <file category="source"  name="Examples/EmptyMain/main.c" attr="template" select="Empty C main" version="1.0.0"/>
+            </files>
+        </component>
+    </components>
+
+    <boards>
+        <board vendor="HDSC" name="EV_F460_LQ100_Rev2.0">
+            <description>HC32F460 100-Pin Target board</description>
+            <mountedDevice    deviceIndex="0" Dvendor="HDSC:145" Dname="HC32F460PETB"/>
+            <compatibleDevice deviceIndex="0" Dvendor="HDSC:145" Dfamily="HC32F460-Series" DsubFamily="HC32F460"/>
+            <debugInterface adapter="JTAG/SW" connector="CMSIS_DAP Debug Connector (MicroUSB connector)"/>
+        </board>
+    </boards>
+
+
+    <examples>
+        <example name="EmptyMain" folder="Examples/EmptyMain" doc="Abstract.txt" version="1.0.0">
+        <description>This is a basic example providing an empty main body</description>
+        <board name="EV_F460_LQ100_Rev2.0" vendor="HDSC"/>
+        <project>
+            <environment name="uv"  load="ARM/EmptyMain.uvprojx"/>
+            <environment name="iar" load="IAR/EmptyMain/EmptyMain.ewp" />
+        </project>
+        <attributes>
+            <component Cclass="CMSIS" Cgroup="CORE"/>
+            <component Cclass="Device" Cgroup="Startup"/>
+            <keyword>Empty</keyword>
+            <keyword>Main</keyword>
+            <keyword>Getting Started</keyword>
+        </attributes>
+        </example>
+    </examples>
+
+
+</package>

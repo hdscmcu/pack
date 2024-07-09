@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+    <vendor>HDSC</vendor>
+    <name>HC32F4A0</name>
+    <description>HC32F4A0 ARM Cortex-M4 Device Family Pack</description>
+    <url>https://raw.githubusercontent.com/hdscmcu/pack/master/</url>
+    <supportContact>mcu_eco@xhsc.com.cn</supportContact>
+    <!-- optional license file -->
+    <!--
+  <license>
+  </license>
+  -->
+    <releases>
+        <release version="1.0.8" date = "2023-09-30">
+            1.Modify headfile register address and register name based on reference manual Rev1.3
+            2.IAR flash config support 1M dual bank
+            3.IAR icf file add otp region
+            4.Update flashlodaer file
+        </release>
+        <release version="1.0.7" date = "2023-01-15">
+            1.update flashlodaer files
+            2.Modify headfile register address and register name based on reference manual Rev1.13
+            3.update svd schemaVersion
+            4.rename svd files
+        </release>
+        <release version="1.0.6" date="2022-03-31">
+            1.add new type:hc32pihb,hc32pghb
+            2.use different flash files for 1M and 2M chip
+            3.update board info
+        </release>
+        <release version="1.0.5" date="2021-09-30">
+            1.Update headfile
+        </release>
+        <release version="1.0.4" date="2021-01-20">
+            1.Update headfile
+        </release>
+        <release version="1.0.3" date="2020-12-16">
+            1.Add new type: hc32f4a0tihb
+        </release>
+        <release version="1.0.2" date="2020-11-12">
+            1.Update license for head file
+            2.Add otp flashloader algorithm
+            3.Sync the system.h/.c form muc/common
+            4.Update template project
+        </release>
+        <release version="1.0.1" date="2020-08-27">
+            1.Update the pack based on the header file
+        </release>
+        <release version="1.0.0" date="2020-03-10">
+            Initial Version
+        </release>
+    </releases>
+
+    <keywords>
+        <!-- keywords for indexing -->
+        <keyword>HDSC</keyword>
+        <keyword>Device Support</keyword>
+        <keyword>HC32F4A0</keyword>
+    </keywords>
+
+    <devices>
+        <family Dfamily="HC32F4A0-Series" Dvendor="HDSC:145">
+            <processor Dcore="Cortex-M4" DcoreVersion="r0p1" Dfpu="1" Dmpu="1" Dendian="Little-endian" Dclock="240000000" />
+            <debugconfig type="swd" clock="1000000" />
+            <description>
+                The HC32F4A0 device family contains an ARM Cortex-M4 processor, running up to 240 MHz with a versatile set of on-chip peripherals.
+            </description>
+
+            <environment name="iar">
+                <compile    define="ewarm"/><!-- needed for driver library -->
+            </environment>
+
+            <!-- ************************  Subfamily 'HC32F4A0'  **************************** -->
+            <subFamily DsubFamily="HC32F4A0">
+                <processor Dclock="240000000"/>
+                    <!-- *************************  Device 'HC32F4A0TIHB'  ***************************** -->
+                    <device Dname="HC32F4A0TIHB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x200000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000000" size="0x1800" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFE0000" size="0x80000" init   ="0" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_2M.FLM" start="0x00000000"  size="0x200000" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_otp.FLM" start="0x03000000"  size="0x1800" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0xI.flash" start="0x00000000"  size="0x200000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0_otp.flash" start="0x03000000"  size="0x1800" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F4A0TIHB.h"/>
+                        <debug svd="SVD/HC32F4A0TIHB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F4A0"/>
+                          </debugger>
+                        </environment>
+                    </device>
+                    <!-- *************************  Device 'HC32F4A0SITB'  ***************************** -->
+                    <device Dname="HC32F4A0SITB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x200000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000000" size="0x1800" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFE0000" size="0x80000" init   ="0" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_2M.FLM" start="0x00000000"  size="0x200000" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_otp.FLM" start="0x03000000"  size="0x1800" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0xI.flash" start="0x00000000"  size="0x200000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0_otp.flash" start="0x03000000"  size="0x1800" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F4A0SITB.h"/>
+                        <debug svd="SVD/HC32F4A0SITB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F4A0"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F4A0SGTB'  ***************************** -->
+                    <device Dname="HC32F4A0SGTB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x100000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000000" size="0x1800" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFE0000" size="0x80000" init   ="0" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_1M.FLM" start="0x00000000"  size="0x100000" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_otp.FLM" start="0x03000000"  size="0x1800" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0xG.flash" start="0x00000000"  size="0x100000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0_otp.flash" start="0x03000000"  size="0x1800" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F4A0SGTB.h"/>
+                        <debug svd="SVD/HC32F4A0SGTB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F4A0"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F4A0SIHB'  ***************************** -->
+                    <device Dname="HC32F4A0SIHB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x200000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000000" size="0x1800" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFE0000" size="0x80000" init   ="0" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_2M.FLM" start="0x00000000"  size="0x200000" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_otp.FLM" start="0x03000000"  size="0x1800" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0xI.flash" start="0x00000000"  size="0x200000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0_otp.flash" start="0x03000000"  size="0x1800" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F4A0SIHB.h"/>
+                        <debug svd="SVD/HC32F4A0SIHB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F4A0"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F4A0SGHB'  ***************************** -->
+                    <device Dname="HC32F4A0SGHB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x100000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000000" size="0x1800" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFE0000" size="0x80000" init   ="0" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_1M.FLM" start="0x00000000"  size="0x100000" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_otp.FLM" start="0x03000000"  size="0x1800" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0xG.flash" start="0x00000000"  size="0x100000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0_otp.flash" start="0x03000000"  size="0x1800" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F4A0SGHB.h"/>
+                        <debug svd="SVD/HC32F4A0SGHB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F4A0"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F4A0RITB'  ***************************** -->
+                    <device Dname="HC32F4A0RITB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x200000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000000" size="0x1800" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFE0000" size="0x80000" init   ="0" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_2M.FLM" start="0x00000000"  size="0x200000" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_otp.FLM" start="0x03000000"  size="0x1800" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0xI.flash" start="0x00000000"  size="0x200000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0_otp.flash" start="0x03000000"  size="0x1800" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F4A0RITB.h"/>
+                        <debug svd="SVD/HC32F4A0RITB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F4A0"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F4A0RGTB'  ***************************** -->
+                    <device Dname="HC32F4A0RGTB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x100000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000000" size="0x1800" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFE0000" size="0x80000" init   ="0" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_1M.FLM" start="0x00000000"  size="0x100000" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_otp.FLM" start="0x03000000"  size="0x1800" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0xG.flash" start="0x00000000"  size="0x100000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0_otp.flash" start="0x03000000"  size="0x1800" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F4A0RGTB.h"/>
+                        <debug svd="SVD/HC32F4A0RGTB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F4A0"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F4A0PITB'  ***************************** -->
+                    <device Dname="HC32F4A0PITB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x200000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000000" size="0x1800" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFE0000" size="0x80000" init   ="0" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_2M.FLM" start="0x00000000"  size="0x200000" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_otp.FLM" start="0x03000000"  size="0x1800" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0xI.flash" start="0x00000000"  size="0x200000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0_otp.flash" start="0x03000000"  size="0x1800" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F4A0PITB.h"/>
+                        <debug svd="SVD/HC32F4A0PITB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F4A0"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F4A0PGTB'  ***************************** -->
+                    <device Dname="HC32F4A0PGTB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x100000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000000" size="0x1800" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFE0000" size="0x80000" init   ="0" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_1M.FLM" start="0x00000000"  size="0x100000" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_otp.FLM" start="0x03000000"  size="0x1800" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0xG.flash" start="0x00000000"  size="0x100000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0_otp.flash" start="0x03000000"  size="0x1800" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F4A0PGTB.h"/>
+                        <debug svd="SVD/HC32F4A0PGTB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F4A0"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F4A0PIHB'  ***************************** -->
+                    <device Dname="HC32F4A0PIHB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x200000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000000" size="0x1800" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFE0000" size="0x80000" init   ="0" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_2M.FLM" start="0x00000000"  size="0x200000" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_otp.FLM" start="0x03000000"  size="0x1800" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0xI.flash" start="0x00000000"  size="0x200000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0_otp.flash" start="0x03000000"  size="0x1800" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F4A0PIHB.h"/>
+                        <debug svd="SVD/HC32F4A0PIHB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F4A0"/>
+                          </debugger>
+                        </environment>
+                    </device>
+
+                    <!-- *************************  Device 'HC32F4A0PGHB'  ***************************** -->
+                    <device Dname="HC32F4A0PGHB">
+                        <memory    id="IROM1"                   start="0x00000000" size="0x100000" startup="1" default="1"/>
+                        <memory    id="IROM2"                   start="0x03000000" size="0x1800" startup="0" default="0"/>
+                        <memory    id="IRAM1"                   start="0x1FFE0000" size="0x80000" init   ="0" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_1M.FLM" start="0x00000000"  size="0x100000" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashARM/HC32F4A0_otp.FLM" start="0x03000000"  size="0x1800" RAMstart="0x1FFE0000" RAMsize="0x00004000" default="1"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0xG.flash" start="0x00000000"  size="0x100000" default="0" style="IAR"/>
+                        <algorithm  name="FlashIAR/FlashHC32F4A0_otp.flash" start="0x03000000"  size="0x1800" default="0" style="IAR"/>
+                        <compile header="Device/Include/HC32F4A0PGHB.h"/>
+                        <debug svd="SVD/HC32F4A0PGHB.svd"/>
+                        <environment name="iar">
+                          <debugger>
+                            <param name="xdsdevicename" value="HC32F4A0"/>
+                          </debugger>
+                        </environment>
+                    </device>
+            </subFamily>
+        </family>
+    </devices>
+
+    <conditions>
+        <!-- Compiler Conditions -->
+        <condition id="Compiler ARM">
+            <description>Startup assembler file for ARMCC</description>
+            <require Tcompiler="ARMCC"/>
+        </condition>
+        <condition id="Compiler IAR">
+            <description>Startup assembler file for IAR</description>
+            <require Tcompiler="IAR"/>
+        </condition>
+
+        <!-- Device Conditions -->
+        <condition id="HC32F4A0">
+            <description>HDSC HC32F4A0 Device</description>
+            <require Dvendor="HDSC:145" Dname="HC32F4A0*"/>
+            <require Cclass="Device" Cgroup="Startup"/>
+        </condition>
+
+        <!-- P/N Conditions -->
+        <condition id = "HC32F4A0TIHB">
+            <require Dname="HC32F4A0TIHB"/>
+        </condition>
+        <condition id = "HC32F4A0SITB">
+            <require Dname="HC32F4A0SITB"/>
+        </condition>
+        <condition id = "HC32F4A0SIHB">
+            <require Dname="HC32F4A0SIHB"/>
+        </condition>
+        <condition id = "HC32F4A0RITB">
+            <require Dname="HC32F4A0RITB"/>
+        </condition>
+        <condition id = "HC32F4A0PITB">
+            <require Dname="HC32F4A0PITB"/>
+        </condition>
+        <condition id = "HC32F4A0SGTB">
+            <require Dname="HC32F4A0SGTB"/>
+        </condition>
+        <condition id = "HC32F4A0SGHB">
+            <require Dname="HC32F4A0SGHB"/>
+        </condition>
+        <condition id = "HC32F4A0RGTB">
+            <require Dname="HC32F4A0RGTB"/>
+        </condition>
+        <condition id = "HC32F4A0PGTB">
+            <require Dname="HC32F4A0PGTB"/>
+        </condition>
+        <condition id = "HC32F4A0PIHB">
+            <require Dname="HC32F4A0PIHB"/>
+        </condition>
+        <condition id = "HC32F4A0PGHB">
+            <require Dname="HC32F4A0PGHB"/>
+        </condition>
+        <!-- Device + CMSIS Conditions -->
+        <condition id="HC32F4A0 CMSIS">
+            <description>HDSC HC32F4A0 Series devices and CMSIS-CORE</description>
+            <require condition="HC32F4A0"/>
+            <require Cclass="CMSIS" Cgroup="CORE"/>
+        </condition>
+    </conditions>
+
+    <components>
+    <!-- Startup HC32F4A0 -->
+        <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="HC32F4A0 CMSIS">
+            <description>System Startup for HC32F4A0 series</description>
+            <RTE_Components_h>
+            <!-- the following content goes into file 'RTE_Components.h' -->
+            <!--#define RTE_DEVICE_STARTUP_HC32F4A0    /* Device Startup for HC32F4A0 */-->
+            </RTE_Components_h>
+
+            <files>
+                <!-- include folder -->
+                <file category="include" name="Device/Include/"/>
+                <file category="header" name="Device/Include/HC32F4A0.h"/>
+                <file category="header" name="Device/Include/HC32F4A0TIHB.h" condition="HC32F4A0TIHB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F4A0SITB.h" condition="HC32F4A0SITB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F4A0SIHB.h" condition="HC32F4A0SIHB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F4A0RITB.h" condition="HC32F4A0RITB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F4A0PITB.h" condition="HC32F4A0PITB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F4A0SGTB.h" condition="HC32F4A0SGTB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F4A0SGHB.h" condition="HC32F4A0SGHB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F4A0RGTB.h" condition="HC32F4A0RGTB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F4A0PGTB.h" condition="HC32F4A0PGTB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F4A0PIHB.h" condition="HC32F4A0PIHB" attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/HC32F4A0PGHB.h" condition="HC32F4A0PGHB" attr="config" version="1.0.0"/>
+                <!-- startup file -->
+                <file category="source" name="Device/Source/ARM/startup_hc32f4a0.s" attr="config" version="1.0.0" condition="Compiler ARM"/>
+                <file category="source" name="Device/Source/IAR/startup_hc32f4a0.s" attr="config" version="1.0.0" condition="Compiler IAR"/>
+                <!-- system file -->
+                <file category="source" name="Device/Source/system_hc32f4a0.c"  attr="config" version="1.0.0"/>
+                <file category="header" name="Device/Include/system_hc32f4a0.h" attr="config" version="1.0.0"/>
+                <!-- example file -->
+                <file category="source"  name="Examples/EmptyMain/main.c" attr="template" select="Empty C main" version="1.0.0"/>
+            </files>
+        </component>
+    </components>
+
+    <boards>
+        <board vendor="HDSC" name="EV_F4A0_LQ176_Rev1.0">
+            <description>HC32F4A0 176-Pin Target board</description>
+            <mountedDevice    deviceIndex="0" Dvendor="HDSC:145" Dname="HC32F4A0SITB"/>
+            <compatibleDevice deviceIndex="0" Dvendor="HDSC:145" Dfamily="HC32F4A0-Series" DsubFamily="HC32F4A0"/>
+            <debugInterface adapter="JTAG/SW" connector="CMSIS_DAP Debug Connector (MicroUSB connector)"/>
+        </board>
+    </boards>
+
+
+    <examples>
+        <example name="EmptyMain" folder="Examples/EmptyMain" doc="Abstract.txt" version="1.0.0">
+        <description>This is a basic example providing an empty main body</description>
+        <board name="EV_F4A0_LQ176_Rev1.0" vendor="HDSC"/>
+        <project>
+            <environment name="uv"  load="ARM/EmptyMain.uvprojx"/>
+            <environment name="iar" load="IAR/EmptyMain/EmptyMain.ewp" />
+        </project>
+        <attributes>
+            <component Cclass="CMSIS" Cgroup="CORE"/>
+            <component Cclass="Device" Cgroup="Startup"/>
+            <keyword>Empty</keyword>
+            <keyword>Main</keyword>
+            <keyword>Getting Started</keyword>
+        </attributes>
+        </example>
+    </examples>
+
+
+</package>
