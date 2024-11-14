@@ -16,7 +16,7 @@
             Header file update base upon RM Rev1.00
             Flashloader set maximum HRC frequency to program
         </release>
-        <release version="1.0.0b" date="2024-03-15">
+        <release version="1.0.0-b" date="2024-03-15">
             Initial Version
         </release>
     </releases>
